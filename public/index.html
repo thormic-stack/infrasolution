@@ -1,0 +1,2038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primero Srv LLC | CA Certification & Broker Solutions | Official Regulatory Channels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;600;700&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primero-navy: #002b49;
+            --primero-navy-dark: #001b2f;
+            --primero-blue: #004b7c;
+            --primero-accent: #0076c0;
+            --primero-accent-light: #38bdf8;
+            --primero-cyan: #0284c7;
+            --primero-gold: #f59e0b;
+            --primero-gold-light: #fef3c7;
+            --primero-emerald: #10b981;
+            --primero-dark: #1e293b;
+            --primero-light: #f8fafc;
+            --primero-border: #cbd5e1;
+            --card-shadow: 0 10px 25px -5px rgba(0, 43, 73, 0.08), 0 8px 10px -6px rgba(0, 43, 73, 0.04);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Open Sans', Arial, sans-serif; }
+        body { background-color: #f1f5f9; color: var(--primero-dark); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+
+        /* Top Regulatory Disclosure Notice Bar */
+        .official-notice-bar {
+            background-color: var(--primero-navy-dark);
+            color: #e2e8f0;
+            font-size: 0.78rem;
+            padding: 0.55rem 2.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .notice-left { display: flex; align-items: center; gap: 8px; }
+        .notice-badge {
+            background: rgba(56, 189, 248, 0.2);
+            color: var(--primero-accent-light);
+            border: 1px solid var(--primero-accent-light);
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .official-links-strip {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            list-style: none;
+        }
+        .official-links-strip a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.76rem;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            transition: color 0.15s;
+        }
+        .official-links-strip a:hover { color: #ffffff; text-decoration: underline; }
+        .official-links-strip a .ext-icon { font-size: 0.7rem; color: var(--primero-accent-light); }
+
+        /* Main Header */
+        .main-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--primero-border);
+            padding: 0.9rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+        .logo-area {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .logo-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primero-navy);
+            letter-spacing: -0.75px;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+        .logo-title span { color: var(--primero-cyan); }
+        .logo-title .firm-badge {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid #bae6fd;
+            margin-left: 6px;
+        }
+        .logo-subtitle {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+
+        .main-nav { display: flex; gap: 0; height: 100%; align-items: center; }
+        .nav-item { position: relative; height: 100%; display: flex; align-items: center; }
+        .nav-link { 
+            color: var(--primero-dark); text-decoration: none; font-size: 0.88rem; font-weight: 700; 
+            padding: 0.9rem 1rem; display: flex; align-items: center; gap: 6px; transition: all 0.15s;
+            border-radius: 4px;
+        }
+        .nav-link:hover, .nav-item.active .nav-link { color: var(--primero-cyan); background-color: var(--primero-light); }
+        .nav-link .arrow { font-size: 8px; transition: transform 0.2s; color: #94a3b8; }
+        .nav-item.active .arrow { transform: rotate(180deg); color: var(--primero-cyan); }
+
+        /* Mega Dropdown Panels */
+        .dropdown-panel {
+            display: none; position: absolute; top: 100%; right: 0; width: 680px;
+            background: #ffffff; border: 1px solid var(--primero-border); box-shadow: 0 16px 36px rgba(0,0,0,0.15);
+            padding: 1.75rem; border-radius: 0 0 8px 8px; z-index: 1000;
+        }
+        .nav-item.active .dropdown-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .dropdown-column h4 { 
+            font-size: 0.74rem; text-transform: uppercase; color: var(--primero-navy); 
+            border-bottom: 2px solid #e2e8f0; padding-bottom: 0.45rem; margin-bottom: 0.85rem; 
+            letter-spacing: 0.75px; font-weight: 800; display: flex; justify-content: space-between;
+        }
+        .dropdown-column ul { list-style: none; }
+        .dropdown-column li { margin-bottom: 0.75rem; }
+        .dropdown-column a { 
+            text-decoration: none; display: block; padding: 0.4rem 0.5rem; 
+            border-radius: 5px; transition: background 0.15s;
+        }
+        .dropdown-column a:hover { background: #f0f9ff; }
+        .dropdown-column a .item-title { 
+            font-size: 0.84rem; font-weight: 700; color: var(--primero-navy); 
+            display: flex; align-items: center; justify-content: space-between; gap: 6px;
+        }
+        .dropdown-column a:hover .item-title { color: var(--primero-cyan); }
+        .channel-tag {
+            font-size: 0.65rem; font-weight: 700; padding: 1px 6px; border-radius: 3px;
+            background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1;
+        }
+        .channel-tag.official { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+        .channel-tag.our-service { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; font-weight: 800; }
+        .dropdown-column a .item-desc { font-size: 0.74rem; color: #64748b; line-height: 1.35; margin-top: 3px; }
+
+        /* Hero Section */
+        .page-hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--primero-navy) 0%, #00365d 60%, #014373 100%);
+            color: #fff;
+            padding: 4rem 2.5rem 4.5rem;
+            overflow: hidden;
+            border-bottom: 4px solid var(--primero-cyan);
+        }
+        .hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.35; pointer-events: none; }
+        .hero-container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+        .hero-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1rem; }
+        .hero-pill {
+            font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+            padding: 4px 10px; border-radius: 9999px;
+        }
+        .hero-pill.our-provision { background: #0284c7; color: #ffffff; }
+        .hero-pill.regulatory { background: rgba(255,255,255,0.15); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.25); }
+        .page-hero h1 { font-size: 2.7rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; letter-spacing: -0.5px; }
+        .page-hero h1 span { color: var(--primero-accent-light); }
+        .page-hero p { font-size: 1.1rem; opacity: 0.94; max-width: 860px; line-height: 1.6; margin-bottom: 1.75rem; }
+        .hero-cta-bar { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--primero-cyan); color: #fff; font-weight: 700; font-size: 0.92rem;
+            padding: 0.8rem 1.6rem; border-radius: 6px; text-decoration: none; border: none; cursor: pointer;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4); transition: all 0.2s;
+        }
+        .btn-primary:hover { background: #0369a1; transform: translateY(-1px); }
+        .btn-secondary {
+            background: rgba(255,255,255,0.12); color: #fff; font-weight: 700; font-size: 0.92rem;
+            padding: 0.8rem 1.6rem; border-radius: 6px; text-decoration: none; border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.22); color: #fff; }
+
+        /* Scope & Provision Clarification Strip */
+        .scope-strip {
+            background: #ffffff;
+            border-bottom: 1px solid var(--primero-border);
+            padding: 1.25rem 2.5rem;
+        }
+        .scope-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .scope-card {
+            border-radius: 8px;
+            padding: 1.2rem 1.4rem;
+            font-size: 0.88rem;
+        }
+        .scope-card.ours {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-left: 5px solid var(--primero-cyan);
+        }
+        .scope-card.official {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 5px solid var(--primero-emerald);
+        }
+        .scope-card h3 {
+            font-size: 0.96rem;
+            font-weight: 800;
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .scope-card.ours h3 { color: #1e40af; }
+        .scope-card.official h3 { color: #065f46; }
+        .scope-card p { color: #334155; line-height: 1.45; }
+
+        /* Main Container */
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 2.5rem auto 4rem;
+            padding: 0 2.5rem;
+            width: 100%;
+        }
+
+        /* Section Headings */
+        .section-header-block {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .section-title {
+            font-size: 1.85rem;
+            color: var(--primero-navy);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .section-subtitle {
+            font-size: 0.92rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .script-engine-badge {
+            background: #0f172a;
+            color: #38bdf8;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .script-engine-badge .pulse-dot {
+            width: 8px; height: 8px; background: #10b981; border-radius: 50%;
+            box-shadow: 0 0 8px #10b981; animation: blinkPulse 1.8s infinite;
+        }
+        @keyframes blinkPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        /* ========================================================
+           SECTORS WITH MATCHING SCRIPT-RENDERED IMAGES GRID
+           ======================================================== */
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+        }
+        .sector-card {
+            background: #ffffff;
+            border: 1px solid var(--primero-border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+        }
+        .sector-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px -10px rgba(0, 43, 73, 0.15);
+            border-color: var(--primero-cyan);
+        }
+        .sector-card.highlight {
+            border: 2px solid var(--primero-cyan);
+            position: relative;
+        }
+        .provision-ribbon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--primero-cyan);
+            color: #fff;
+            font-size: 0.68rem;
+            font-weight: 800;
+            padding: 3px 9px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        /* Sector Matching Script Image Wrapper */
+        .sector-image-box {
+            position: relative;
+            background: #08101a;
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 1px solid #1e293b;
+        }
+        .sector-canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .script-meta-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .script-controls-bar {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            display: flex;
+            gap: 6px;
+            z-index: 5;
+        }
+        .canvas-action-btn {
+            background: rgba(15, 23, 42, 0.85);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .canvas-action-btn:hover {
+            background: var(--primero-cyan);
+            color: #ffffff;
+            border-color: var(--primero-cyan);
+        }
+
+        /* Sector Body */
+        .sector-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .sector-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--primero-cyan);
+            letter-spacing: 1px;
+            margin-bottom: 0.35rem;
+        }
+        .sector-heading {
+            font-size: 1.25rem;
+            color: var(--primero-navy);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        .sector-tagline {
+            font-size: 0.82rem;
+            font-style: italic;
+            color: #0369a1;
+            margin-bottom: 0.85rem;
+            font-weight: 600;
+        }
+        .sector-desc {
+            font-size: 0.88rem;
+            color: #475569;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+        }
+        .capability-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 1.5rem;
+            margin-top: auto;
+        }
+        .cap-tag {
+            background: #f1f5f9;
+            color: #334155;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+        .sector-card.highlight .cap-tag {
+            background: #e0f2fe;
+            color: #0369a1;
+            border-color: #bae6fd;
+        }
+        .sector-action-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: var(--primero-navy);
+            color: #ffffff;
+            font-size: 0.84rem;
+            font-weight: 700;
+            padding: 0.65rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+        .sector-action-link:hover {
+            background: var(--primero-cyan);
+        }
+
+        /* Two-Column Section: Inquiry Form & Official Directory */
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1.2fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Inquiry Card */
+        .inquiry-card {
+            background: #ffffff;
+            border: 1px solid var(--primero-border);
+            border-radius: 10px;
+            padding: 2.2rem;
+            box-shadow: var(--card-shadow);
+        }
+        .inquiry-card h2 {
+            font-size: 1.45rem;
+            color: var(--primero-navy);
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+        }
+        .inquiry-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 1rem; }
+        .form-group label { font-size: 0.8rem; font-weight: 700; color: var(--primero-navy); }
+        .form-group input, .form-group textarea, .form-group select {
+            border: 1px solid var(--primero-border);
+            border-radius: 6px;
+            padding: 0.7rem 0.9rem;
+            font-size: 0.9rem;
+            outline: none;
+            background: #f8fafc;
+            transition: all 0.15s;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: var(--primero-cyan);
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+        }
+        .submit-btn {
+            background: var(--primero-navy);
+            color: #ffffff;
+            border: none;
+            padding: 0.85rem 1.75rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .submit-btn:hover { background: var(--primero-cyan); transform: translateY(-1px); }
+
+        /* Official Authority Directory Sidebar */
+        .authority-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .official-directory-box {
+            background: #ffffff;
+            border: 1px solid var(--primero-border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+        }
+        .official-directory-box h3 {
+            font-size: 1.1rem;
+            color: var(--primero-navy);
+            font-weight: 800;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .official-directory-list { list-style: none; }
+        .official-directory-list li {
+            margin-bottom: 0.85rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .official-directory-list li:last-child { margin-bottom: 0; padding-bottom: 0; border: none; }
+        .official-link-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primero-navy);
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+        .official-link-row:hover { color: var(--primero-cyan); }
+        .official-link-desc {
+            font-size: 0.76rem;
+            color: #64748b;
+            margin-top: 2px;
+            line-height: 1.35;
+        }
+
+        /* Direct Contact Desk Card */
+        .desk-info-box {
+            background: #0f172a;
+            color: #f8fafc;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid #334155;
+        }
+        .desk-info-box h4 {
+            font-size: 1rem;
+            color: #38bdf8;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+        .desk-detail {
+            font-size: 0.88rem;
+            margin-bottom: 0.6rem;
+            color: #cbd5e1;
+        }
+        .desk-detail a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .desk-detail a:hover { text-decoration: underline; }
+
+        /* --- HYBRID CHATBOT WIDGET STYLES --- */
+        .chat-trigger-bubble {
+            position: fixed; bottom: 24px; right: 24px;
+            background: var(--primero-cyan); color: white; width: 62px; height: 62px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 6px 24px rgba(2, 132, 199, 0.45); cursor: pointer; z-index: 9999;
+            transition: transform 0.2s, background 0.2s; font-size: 26px;
+        }
+        .chat-trigger-bubble:hover { transform: scale(1.08); background: var(--primero-navy); }
+
+        .chat-window-modal {
+            position: fixed; bottom: 98px; right: 24px; width: 390px; height: 530px;
+            background: #ffffff; border: 1px solid var(--primero-border); border-radius: 12px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.25); display: none; flex-direction: column; z-index: 9999;
+            overflow: hidden; animation: slideUpChat 0.22s ease-out;
+        }
+        @keyframes slideUpChat { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        .chat-header { background: var(--primero-navy); color: white; padding: 1.1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
+        .chat-header h3 { font-size: 0.96rem; font-weight: 800; }
+        .chat-header span { font-size: 0.74rem; opacity: 0.85; display: block; margin-top: 2px; }
+        .chat-close { cursor: pointer; font-size: 1.2rem; opacity: 0.8; transition: opacity 0.15s; }
+        .chat-close:hover { opacity: 1; }
+
+        .chat-messages { flex: 1; background: #f8fafc; padding: 1rem; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+        .msg { max-width: 84%; padding: 0.75rem 0.95rem; border-radius: 8px; font-size: 0.84rem; line-height: 1.45; word-wrap: break-word; }
+        .msg.bot { background: #e2e8f0; color: #1e293b; align-self: flex-start; border-bottom-left-radius: 2px; }
+        .msg.user { background: var(--primero-cyan); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+        .msg.agent { background: #059669; color: white; align-self: flex-start; border-bottom-left-radius: 2px; }
+
+        .chat-footer { padding: 0.85rem; background: #ffffff; border-top: 1px solid var(--primero-border); display: flex; flex-direction: column; gap: 8px; }
+        .chat-input-row { display: flex; gap: 6px; }
+        .chat-input-row input { flex: 1; border: 1px solid var(--primero-border); padding: 0.6rem 0.8rem; border-radius: 6px; font-size: 0.85rem; outline: none; }
+        .chat-input-row button { background: var(--primero-navy); color: white; border: none; padding: 0.6rem 1rem; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.82rem; transition: background 0.15s; }
+        .chat-input-row button:hover { background: var(--primero-cyan); }
+
+        .human-handoff-btn {
+            background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; padding: 0.5rem;
+            border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; text-align: center; transition: 0.15s;
+        }
+        .human-handoff-btn:hover { background: #e2e8f0; color: #0f172a; }
+
+        /* --- EMBEDDED SYSTEM TERMINAL (REPL) --- */
+        .embedded-terminal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8);
+            z-index: 10000; display: none; justify-content: center; align-items: center; backdrop-filter: blur(5px);
+        }
+        .terminal-box {
+            width: 840px; height: 530px; background: #0c1017; border: 1px solid #38bdf8; border-radius: 8px;
+            display: flex; flex-direction: column; box-shadow: 0 25px 60px rgba(0,0,0,0.85); overflow: hidden;
+        }
+        .terminal-top { background: #161f2c; padding: 0.8rem 1.1rem; display: flex; justify-content: space-between; color: #38bdf8; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; border-bottom: 1px solid #1e293b; }
+        .terminal-screen { flex: 1; padding: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #10b981; overflow-y: auto; background: #05070a; line-height: 1.55; }
+        .terminal-prompt-row { display: flex; background: #0c1017; padding: 0.75rem 1rem; border-top: 1px solid #1e293b; font-family: 'JetBrains Mono', monospace; }
+        .terminal-prompt-row span { color: #38bdf8; margin-right: 8px; font-weight: bold; }
+        .terminal-prompt-row input { flex: 1; background: transparent; border: none; color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; outline: none; }
+
+        /* Image Inspection Modal */
+        .inspect-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85);
+            z-index: 10002; display: none; justify-content: center; align-items: center; backdrop-filter: blur(6px);
+        }
+        .inspect-box {
+            background: #0f172a; border: 1px solid #38bdf8; border-radius: 10px; width: 880px; max-width: 95vw;
+            display: flex; flex-direction: column; box-shadow: 0 25px 60px rgba(0,0,0,0.9); overflow: hidden;
+        }
+        .inspect-header {
+            background: #1e293b; padding: 0.85rem 1.25rem; display: flex; justify-content: space-between; align-items: center;
+            color: #38bdf8; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 700;
+        }
+        .inspect-view-area {
+            padding: 1.5rem; display: flex; justify-content: center; align-items: center; background: #020617;
+        }
+        .inspect-view-area img { max-width: 100%; height: auto; border: 1px solid #334155; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .inspect-footer {
+            padding: 1rem 1.25rem; background: #0f172a; border-top: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #94a3b8;
+        }
+
+        /* Notification Toast */
+        .toast-msg {
+            position: fixed; top: 20px; right: 20px; background: #059669; color: white;
+            padding: 1rem 1.5rem; border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+            font-size: 0.9rem; font-weight: 600; display: none; z-index: 10001;
+            animation: slideInToast 0.25s ease-out;
+        }
+        @keyframes slideInToast { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        /* Footer */
+        footer { background-color: var(--primero-navy); color: #fff; padding: 4rem 2.5rem 1.75rem; margin-top: auto; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 2.5rem; }
+        .footer-col h5 { font-size: 0.98rem; margin-bottom: 1rem; color: #60a5fa; font-weight: 800; letter-spacing: 0.5px; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.65rem; }
+        .footer-col ul li a { color: #cbd5e1; text-decoration: none; transition: color 0.15s; }
+        .footer-col ul li a:hover { color: #ffffff; text-decoration: underline; }
+        .footer-bottom { max-width: 1200px; margin: 1.5rem auto 0; display: flex; justify-content: space-between; font-size: 0.78rem; opacity: 0.85; flex-wrap: wrap; gap: 1rem; }
+        .terminal-trigger-link { background: none; border: none; color: #38bdf8; cursor: pointer; font-size: 0.78rem; text-decoration: underline; font-family: 'JetBrains Mono', monospace; }
+        .terminal-trigger-link:hover { color: #fff; }
+
+        @media (max-width: 900px) {
+            .workspace-grid { grid-template-columns: 1fr; }
+            .scope-container { grid-template-columns: 1fr; }
+            .official-notice-bar, .main-header, .page-hero, .scope-strip, .main-wrapper, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+            .dropdown-panel { width: 100vw; right: -1.25rem; }
+            .terminal-box { width: 95vw; height: 80vh; }
+            .page-hero h1 { font-size: 2.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Notification Toast -->
+    <div class="toast-msg" id="toastMsg">Inquiry sent successfully! Our client desk will reach out promptly.</div>
+
+    <!-- Top Official Channels Strip & Disclosure Notice -->
+    <div class="official-notice-bar">
+        <div class="notice-left">
+            <span class="notice-badge">Official Registry Routing</span>
+            <span>Header navigations link directly to authoritative government & SRO portals</span>
+        </div>
+        <ul class="official-links-strip">
+            <li><a href="https://www.finra.org" target="_blank" rel="noopener noreferrer">FINRA.org <span class="ext-icon">↗</span></a></li>
+            <li><a href="https://brokercheck.finra.org" target="_blank" rel="noopener noreferrer">BrokerCheck <span class="ext-icon">↗</span></a></li>
+            <li><a href="https://www.sec.gov" target="_blank" rel="noopener noreferrer">SEC.gov <span class="ext-icon">↗</span></a></li>
+            <li><a href="https://gateway.finra.org" target="_blank" rel="noopener noreferrer">FINRA Gateway <span class="ext-icon">↗</span></a></li>
+            <li><a href="https://www.investor.gov" target="_blank" rel="noopener noreferrer">Investor.gov <span class="ext-icon">↗</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <a href="#" class="logo-area">
+            <div class="logo-title">
+                PRIMERO<span> SRV</span>
+                <span class="firm-badge">LLC</span>
+            </div>
+            <div class="logo-subtitle">CA Certification & Broker Solutions</div>
+        </a>
+        <nav class="main-nav" id="mainNav"></nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <canvas class="hero-canvas" id="heroCanvas"></canvas>
+        <div class="hero-container">
+            <div class="hero-pills">
+                <span class="hero-pill our-provision">Our Direct Provision: CA Certification & Brokers</span>
+                <span class="hero-pill regulatory">Authoritative Official Channels Linked</span>
+            </div>
+            <h1>Accredited <span>CA Certification</span> & <span>Broker Solutions</span></h1>
+            <p>Primero Srv LLC delivers sovereign Certificate Authority (CA) validation, Public Key Infrastructure (PKI), and certified broker intermediary solutions. For regulatory rulebooks, exam scheduling, and federal filings, our header navigates directly to authoritative official channels.</p>
+            <div class="hero-cta-bar">
+                <a href="#sector-ca-cert" class="btn-primary">Explore CA Certification</a>
+                <a href="#sector-brokers" class="btn-primary" style="background: #004b7c;">Explore Broker Provisions</a>
+                <a href="#inquiry-section" class="btn-secondary">Submit Client Inquiry</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scope Clarification Strip -->
+    <section class="scope-strip">
+        <div class="scope-container">
+            <div class="scope-card ours">
+                <h3><span>★</span> Our Firm's Direct Provision: CA Certification & Brokers</h3>
+                <p>Primero Srv LLC directly provides independent <strong>Certificate Authority (CA) validation</strong>, digital identity attestation, PKI key lifecycle deployment, and <strong>certified broker matching & intermediary consulting</strong> for institutional operations.</p>
+            </div>
+            <div class="scope-card official">
+                <h3><span>↗</span> Official Regulatory Channels Navigation</h3>
+                <p>Header navigation dropdowns provide direct outbound links to <strong>FINRA.org, BrokerCheck, SEC EDGAR, and FINRA Gateway</strong> so market participants can access authentic statutory rulebooks, registrations, and enforcement archives.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+
+        <!-- Sectors Header -->
+        <div class="section-header-block" id="sectors">
+            <div>
+                <h2 class="section-title">Industry Practice Sectors & Core Provisions</h2>
+                <p class="section-subtitle">Visualized via custom matching script images rendered in real-time by our vector graphics engine.</p>
+            </div>
+            <div class="script-engine-badge">
+                <span class="pulse-dot"></span>
+                <span>SCRIPT IMAGE ENGINE // ACTIVE</span>
+            </div>
+        </div>
+
+        <!-- Sectors Grid with Matching Script-Rendered Images -->
+        <div class="sectors-grid">
+
+            <!-- Sector 1: CA Certification (Our Provision) -->
+            <div class="sector-card highlight" id="sector-ca-cert">
+                <span class="provision-ribbon">Our Core Provision</span>
+                <div class="sector-image-box">
+                    <canvas id="canvas-ca-cert" class="sector-canvas" width="600" height="340"></canvas>
+                    <div class="script-meta-overlay">
+                        <span>●</span> <span>SCRIPT_IMG: CA_TRUST_CHAIN_X509</span>
+                    </div>
+                    <div class="script-controls-bar">
+                        <button class="canvas-action-btn" onclick="exportScriptImage('canvas-ca-cert', 'ca-certification-script-image.png')">📷 Export PNG</button>
+                        <button class="canvas-action-btn" onclick="inspectScriptCanvas('canvas-ca-cert', 'CA Certification & PKI Trust Root Architecture')">🔍 Inspect HD</button>
+                    </div>
+                </div>
+                <div class="sector-body">
+                    <div class="sector-code">SECTOR 01 // ACCREDITED PROVISION</div>
+                    <h3 class="sector-heading">CA Certification & PKI Trust Infrastructure</h3>
+                    <div class="sector-tagline">Sovereign Certificate Authority & Cryptographic Attestation</div>
+                    <p class="sector-desc">Primero Srv LLC provides comprehensive Certificate Authority (CA) deployment, root-to-leaf X.509 certificate issuance, Hardware Security Module (HSM) architecture, automated ACME/CMP lifecycle verification, and zero-trust cryptographic attestations for modern digital institutions.</p>
+                    <div class="capability-tags">
+                        <span class="cap-tag">X.509 v3 Digital Certificates</span>
+                        <span class="cap-tag">Root & Intermediate CAs</span>
+                        <span class="cap-tag">HSM Key Generation</span>
+                        <span class="cap-tag">TLS / Cryptographic Attestation</span>
+                        <span class="cap-tag">CRL & OCSP Verification</span>
+                    </div>
+                    <a href="#inquiry-section" class="sector-action-link" onclick="preselectService('CA Certification & PKI Validation')">Inquire for CA Certification →</a>
+                </div>
+            </div>
+
+            <!-- Sector 2: Brokers & Brokerage Solutions (Our Provision) -->
+            <div class="sector-card highlight" id="sector-brokers">
+                <span class="provision-ribbon">Our Core Provision</span>
+                <div class="sector-image-box">
+                    <canvas id="canvas-brokers" class="sector-canvas" width="600" height="340"></canvas>
+                    <div class="script-meta-overlay">
+                        <span>●</span> <span>SCRIPT_IMG: BROKER_EXECUTION_MATRIX</span>
+                    </div>
+                    <div class="script-controls-bar">
+                        <button class="canvas-action-btn" onclick="exportScriptImage('canvas-brokers', 'broker-solutions-script-image.png')">📷 Export PNG</button>
+                        <button class="canvas-action-btn" onclick="inspectScriptCanvas('canvas-brokers', 'Broker Solutions & Order Execution Desk')">🔍 Inspect HD</button>
+                    </div>
+                </div>
+                <div class="sector-body">
+                    <div class="sector-code">SECTOR 02 // ACCREDITED PROVISION</div>
+                    <h3 class="sector-heading">Certified Broker Provision & Intermediary Solutions</h3>
+                    <div class="sector-tagline">Independent Broker Matching, Clearing Logistics & Trade Desks</div>
+                    <p class="sector-desc">Our qualified broker advisory provision facilitates institutional broker-dealer selection, introducing broker (IB) architectures, order-routing compliance, clearinghouse coordination, and representative credentialing alignment for capital market participants.</p>
+                    <div class="capability-tags">
+                        <span class="cap-tag">Certified Broker Desks</span>
+                        <span class="cap-tag">Introducing Broker (IB) Frameworks</span>
+                        <span class="cap-tag">Clearing Coordination</span>
+                        <span class="cap-tag">Trade Desk Architecture</span>
+                        <span class="cap-tag">Broker Compliance Navigation</span>
+                    </div>
+                    <a href="#inquiry-section" class="sector-action-link" onclick="preselectService('Broker Provision & Brokerage Advisory')">Request Broker Solutions →</a>
+                </div>
+            </div>
+
+            <!-- Sector 3: Operational Audits & Process Verification -->
+            <div class="sector-card" id="sector-audit">
+                <div class="sector-image-box">
+                    <canvas id="canvas-audit" class="sector-canvas" width="600" height="340"></canvas>
+                    <div class="script-meta-overlay">
+                        <span>●</span> <span>SCRIPT_IMG: AUDIT_RADAR_FORENSICS</span>
+                    </div>
+                    <div class="script-controls-bar">
+                        <button class="canvas-action-btn" onclick="exportScriptImage('canvas-audit', 'operational-audit-script-image.png')">📷 Export PNG</button>
+                        <button class="canvas-action-btn" onclick="inspectScriptCanvas('canvas-audit', 'Operational Audit & Process Verification Radar')">🔍 Inspect HD</button>
+                    </div>
+                </div>
+                <div class="sector-body">
+                    <div class="sector-code">SECTOR 03 // ADVISORY PRACTICE</div>
+                    <h3 class="sector-heading">Operational Audits & Process Verification</h3>
+                    <div class="sector-tagline">Forensic Process Reviews, Control Integrity & Documentation Checks</div>
+                    <p class="sector-desc">Independent operational reviews engineered to stress-test workflow procedures, detect supervisory control deficiencies, and validate institutional reporting mechanisms against recognized governance frameworks.</p>
+                    <div class="capability-tags">
+                        <span class="cap-tag">Workflow Forensics</span>
+                        <span class="cap-tag">Internal Controls Testing</span>
+                        <span class="cap-tag">Audit Trail Reconciliation</span>
+                        <span class="cap-tag">Supervisory Deficiencies Review</span>
+                    </div>
+                    <a href="#inquiry-section" class="sector-action-link" onclick="preselectService('Operational Review & Audit')">Book Operational Audit →</a>
+                </div>
+            </div>
+
+            <!-- Sector 4: Corporate Strategy & Regulatory Alignment -->
+            <div class="sector-card" id="sector-strategy">
+                <div class="sector-image-box">
+                    <canvas id="canvas-strategy" class="sector-canvas" width="600" height="340"></canvas>
+                    <div class="script-meta-overlay">
+                        <span>●</span> <span>SCRIPT_IMG: STRATEGY_TOPOLOGY_GRAPH</span>
+                    </div>
+                    <div class="script-controls-bar">
+                        <button class="canvas-action-btn" onclick="exportScriptImage('canvas-strategy', 'corporate-strategy-script-image.png')">📷 Export PNG</button>
+                        <button class="canvas-action-btn" onclick="inspectScriptCanvas('canvas-strategy', 'Enterprise Strategy & Governance Topology')">🔍 Inspect HD</button>
+                    </div>
+                </div>
+                <div class="sector-body">
+                    <div class="sector-code">SECTOR 04 // ADVISORY PRACTICE</div>
+                    <h3 class="sector-heading">Corporate Strategy & Regulatory Alignment</h3>
+                    <div class="sector-tagline">Executive Governance, Multi-Jurisdiction Strategy & Compliance</div>
+                    <p class="sector-desc">Strategic executive advisory helping organizations align corporate governance, cross-border restructuring, and operational parameters with statutory SEC, FINRA, and international regulatory expectations.</p>
+                    <div class="capability-tags">
+                        <span class="cap-tag">Corporate Governance</span>
+                        <span class="cap-tag">Multi-Jurisdictional Strategy</span>
+                        <span class="cap-tag">Regulatory Alignment</span>
+                        <span class="cap-tag">Executive Advisory</span>
+                    </div>
+                    <a href="#inquiry-section" class="sector-action-link" onclick="preselectService('Corporate Advisory & Strategy')">Consult With Partners →</a>
+                </div>
+            </div>
+
+            <!-- Sector 5: Secure Client Gateway & Relay Vault -->
+            <div class="sector-card" id="sector-gateway">
+                <div class="sector-image-box">
+                    <canvas id="canvas-gateway" class="sector-canvas" width="600" height="340"></canvas>
+                    <div class="script-meta-overlay">
+                        <span>●</span> <span>SCRIPT_IMG: SECURE_RELAY_CONDUIT</span>
+                    </div>
+                    <div class="script-controls-bar">
+                        <button class="canvas-action-btn" onclick="exportScriptImage('canvas-gateway', 'secure-gateway-script-image.png')">📷 Export PNG</button>
+                        <button class="canvas-action-btn" onclick="inspectScriptCanvas('canvas-gateway', 'Encrypted Client Relay Conduit')">🔍 Inspect HD</button>
+                    </div>
+                </div>
+                <div class="sector-body">
+                    <div class="sector-code">SECTOR 05 // SYSTEM INFRASTRUCTURE</div>
+                    <h3 class="sector-heading">Encrypted Client Gateway & Relay Vault</h3>
+                    <div class="sector-tagline">High-Confidentiality Document Relays & Encrypted Channels</div>
+                    <p class="sector-desc">Proprietary secure transmission protocols for confidential corporate disclosures, verified CA certificate distribution, and high-speed live specialist escalations with strict cryptographic integrity.</p>
+                    <div class="capability-tags">
+                        <span class="cap-tag">TLS 1.3 Conduit</span>
+                        <span class="cap-tag">Cryptographic Hash Logs</span>
+                        <span class="cap-tag">Direct Specialist Escalation</span>
+                        <span class="cap-tag">System REPL Console</span>
+                    </div>
+                    <a href="#inquiry-section" class="sector-action-link" onclick="preselectService('General Support & Relay')">Access Secure Conduit →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Lower Section: Client Inquiry Desk + Official Regulatory Directory -->
+        <div class="workspace-grid" id="inquiry-section">
+
+            <!-- Submission Form -->
+            <div class="inquiry-card">
+                <h2>Direct Consultation & Service Request</h2>
+                <p>Submit your engagement requirements to Primero Srv LLC. Our practice heads for CA Certification and Broker Solutions review submissions within 2 business hours.</p>
+
+                <form name="general-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleInquirySubmit(event)">
+                    <input type="hidden" name="form-name" value="general-inquiry" />
+                    <p style="display: none;">
+                        <label>Do not fill: <input name="bot-field" /></label>
+                    </p>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clientName">Full Name / Representative *</label>
+                            <input type="text" id="clientName" name="name" required placeholder="e.g. Katherine Vance">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientContact">Business Email / Phone *</label>
+                            <input type="text" id="clientContact" name="contact" required placeholder="k.vance@enterprise.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clientCity">Jurisdiction / Operating City</label>
+                            <input type="text" id="clientCity" name="city" placeholder="e.g. New York, NY / London / Zurich">
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceCategory">Target Practice Sector *</label>
+                            <select id="serviceCategory" name="serviceArea" required>
+                                <option value="CA Certification & PKI Validation">★ CA Certification & PKI Validation (Our Provision)</option>
+                                <option value="Broker Provision & Brokerage Advisory">★ Broker Provision & Brokerage Solutions (Our Provision)</option>
+                                <option value="Corporate Advisory & Strategy">Corporate Strategy & Governance</option>
+                                <option value="Operational Review & Audit">Operational Review & Forensic Audit</option>
+                                <option value="Official Channel Guidance">Official Channel Regulatory Guidance</option>
+                                <option value="General Support & Relay">General Client Support & Relay</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiryMessage">Project Specifications & Objectives *</label>
+                        <textarea id="inquiryMessage" name="message" rows="4" required placeholder="Specify your CA certification parameters, broker service requirements, or advisory scope..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Transmit Engagement Inquiry</span> <span>→</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Official Channels Directory Sidebar -->
+            <div class="authority-sidebar">
+                <div class="official-directory-box">
+                    <h3>
+                        <span>Official Regulatory Portals</span>
+                        <span class="channel-tag official">External ↗</span>
+                    </h3>
+                    <ul class="official-directory-list">
+                        <li>
+                            <a class="official-link-row" href="https://brokercheck.finra.org" target="_blank" rel="noopener noreferrer">
+                                <span>FINRA BrokerCheck</span> <span>↗</span>
+                            </a>
+                            <div class="official-link-desc">Official public registry to verify broker-dealer licenses, credentials, and disciplinary disclosures.</div>
+                        </li>
+                        <li>
+                            <a class="official-link-row" href="https://www.finra.org/rules-guidance/rulebooks/finra-rules" target="_blank" rel="noopener noreferrer">
+                                <span>Consolidated FINRA Rulebook</span> <span>↗</span>
+                            </a>
+                            <div class="official-link-desc">Authoritative repository of FINRA rules, conduct requirements, and financial regulations.</div>
+                        </li>
+                        <li>
+                            <a class="official-link-row" href="https://gateway.finra.org" target="_blank" rel="noopener noreferrer">
+                                <span>FINRA Gateway Portal</span> <span>↗</span>
+                            </a>
+                            <div class="official-link-desc">Central compliance filing portal for registered institutions and broker-dealers.</div>
+                        </li>
+                        <li>
+                            <a class="official-link-row" href="https://www.sec.gov/edgar/searchedgar/companysearch" target="_blank" rel="noopener noreferrer">
+                                <span>SEC EDGAR Filings</span> <span>↗</span>
+                            </a>
+                            <div class="official-link-desc">U.S. Securities and Exchange Commission official disclosure database for corporate filings.</div>
+                        </li>
+                        <li>
+                            <a class="official-link-row" href="https://www.finra.org/registration-exams-ce/qualification-exams" target="_blank" rel="noopener noreferrer">
+                                <span>Securities Qualification Exams</span> <span>↗</span>
+                            </a>
+                            <div class="official-link-desc">Series 7, Series 63, and Series 24 examination schedules and prerequisites.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="desk-info-box">
+                    <h4>Direct Contact & Escalation Desks</h4>
+                    <div class="desk-detail">CA Certification Desk: <a href="mailto:ca-cert@primerosrv.com">ca-cert@primerosrv.com</a></div>
+                    <div class="desk-detail">Brokerage Solutions Desk: <a href="mailto:brokers@primerosrv.com">brokers@primerosrv.com</a></div>
+                    <div class="desk-detail">Executive Consultancy: <a href="mailto:consultancy@primerosrv.com">consultancy@primerosrv.com</a></div>
+                    <div class="desk-detail">Client Support Helpline: <a href="mailto:support@primerosrv.com">support@primerosrv.com</a></div>
+                    <div style="margin-top: 1rem; border-top: 1px solid #334155; padding-top: 0.75rem; font-size: 0.78rem; color: #94a3b8;">
+                        Primero Srv LLC is an independent corporate advisory and technical solutions provider. Operating hours: 9:00 AM – 6:00 PM EST.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h5>Our Core Provisions</h5>
+                <ul>
+                    <li><a href="#sector-ca-cert">CA Certification & PKI Validation</a></li>
+                    <li><a href="#sector-brokers">Broker Provision & Intermediary Desks</a></li>
+                    <li><a href="#sector-audit">Operational Reviews & Process Audits</a></li>
+                    <li><a href="#sector-strategy">Corporate Strategy & Governance</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Official Regulatory Channels</h5>
+                <ul>
+                    <li><a href="https://www.finra.org" target="_blank" rel="noopener noreferrer">FINRA.org Official ↗</a></li>
+                    <li><a href="https://brokercheck.finra.org" target="_blank" rel="noopener noreferrer">BrokerCheck Registry ↗</a></li>
+                    <li><a href="https://www.sec.gov" target="_blank" rel="noopener noreferrer">SEC.gov Official ↗</a></li>
+                    <li><a href="https://gateway.finra.org" target="_blank" rel="noopener noreferrer">FINRA Gateway Portal ↗</a></li>
+                    <li><a href="https://www.investor.gov" target="_blank" rel="noopener noreferrer">SEC Investor.gov ↗</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Client Support & Helpdesk</h5>
+                <ul>
+                    <li><a onclick="openChatWidget()">Virtual Concierge Assistant</a></li>
+                    <li><a onclick="openChatWidgetWithHuman()">Connect to Live Specialist</a></li>
+                    <li><a href="mailto:consultancy@primerosrv.com">Consultancy Desk</a></li>
+                    <li><a onclick="toggleTerminal()">Secure Terminal REPL</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Primero Srv LLC</h5>
+                <p style="font-size: 0.82rem; color: #cbd5e1; line-height: 1.5; margin-bottom: 0.75rem;">
+                    Accredited corporate advisory, sovereign Certificate Authority infrastructure, and broker intermediary solutions.
+                </p>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #38bdf8;">
+                    ENV: PRODUCTION // REGION: US-EAST-2
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Primero Srv LLC. All Rights Reserved.</span>
+            <span>
+                <button class="terminal-trigger-link" onclick="toggleTerminal()">[OPEN SYSTEM REPL]</button> | 
+                Regulatory Disclaimer | Contact: consultancy@primerosrv.com
+            </span>
+        </div>
+    </footer>
+
+    <!-- --- FLOATING CHATBOT WIDGET --- -->
+    <div class="chat-trigger-bubble" onclick="toggleChatWindow()" title="Open Virtual Support">💬</div>
+
+    <div class="chat-window-modal" id="chatModal">
+        <div class="chat-header">
+            <div>
+                <h3 id="chatTitle">Primero Srv Virtual Assistant</h3>
+                <span id="chatSubtitle">CA Certification & Broker Support Concierge</span>
+            </div>
+            <div class="chat-close" onclick="toggleChatWindow()">✕</div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="msg bot">Hello! Welcome to Primero Srv LLC. We specialize directly in CA Certification services and Broker Solutions, and we provide navigation to official regulatory channels. How may I assist your firm today?</div>
+        </div>
+        <div class="chat-footer">
+            <button class="human-handoff-btn" id="humanBtn" onclick="switchToHumanAgent()">Connect to Live Specialist</button>
+            <div class="chat-input-row">
+                <input type="text" id="chatInputBox" placeholder="Ask about CA certs, brokers, or official channels..." onkeypress="handleChatPress(event)">
+                <button onclick="sendUserMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- EMBEDDED SYSTEM TERMINAL OVERLAY (REPL) --- -->
+    <div class="embedded-terminal-overlay" id="terminalOverlay">
+        <div class="terminal-box">
+            <div class="terminal-top">
+                <span>[PRIMERO_REPL] RUNTIME TERMINAL // CA_CERT & BROKER REGISTRY</span>
+                <span style="cursor: pointer; color: #ef4444;" onclick="toggleTerminal()">[CLOSE]</span>
+            </div>
+            <div class="terminal-screen" id="termScreen">
+                <div>[SYSTEM] Primero Srv sovereign client console initialized. Type 'help' for available directives.</div>
+                <div style="color: #38bdf8; margin-top: 4px;">----------------------------------------------------------------</div>
+                <div style="color: #94a3b8;">Our direct provisions: CA Certification & Brokerage Solutions. Official channels linked in header.</div>
+            </div>
+            <div class="terminal-prompt-row">
+                <span>client@primerosrv:~$</span>
+                <input type="text" id="termInput" placeholder="Enter directive (e.g. 'ca_cert', 'brokers', 'official_channels')..." onkeypress="handleTermPress(event)">
+            </div>
+        </div>
+    </div>
+
+    <!-- --- SCRIPT IMAGE INSPECTOR MODAL --- -->
+    <div class="inspect-overlay" id="inspectOverlay" onclick="closeInspectOverlay(event)">
+        <div class="inspect-box" onclick="event.stopPropagation()">
+            <div class="inspect-header">
+                <span id="inspectModalTitle">SCRIPT-RENDERED IMAGE INSPECTOR</span>
+                <span style="cursor: pointer; color: #ef4444;" onclick="closeInspectOverlay()">[CLOSE]</span>
+            </div>
+            <div class="inspect-view-area">
+                <img id="inspectModalImg" src="" alt="Script Image HD Preview">
+            </div>
+            <div class="inspect-footer">
+                <span id="inspectModalMeta">Render Engine: SectorCanvas2D Script // Scaled for Retina Displays</span>
+                <button class="canvas-action-btn" id="inspectDownloadBtn" style="background: var(--primero-cyan); color: #fff;">Download HD Snapshot</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         SCRIPT: NAVIGATION, CANVAS RENDERING, CHAT, TERMINAL
+         ======================================================== -->
+    <script>
+        // --- 1. Header Navigation Data (Official Channels & Our Provisions) ---
+        const navigationStructure = {
+            'Rules & Guidance': [
+                {
+                    title: 'Official Regulatory Rules',
+                    links: [
+                        { label: 'Consolidated Rulebook', desc: 'Authoritative FINRA rules for broker-dealers.', url: 'https://www.finra.org/rules-guidance/rulebooks/finra-rules', official: true },
+                        { label: 'Regulatory Notices', desc: 'Weekly guidance and regulatory releases.', url: 'https://www.finra.org/rules-guidance/notices', official: true },
+                        { label: 'SEC Rules & Regulations', desc: 'U.S. SEC federal statutory rulebook.', url: 'https://www.sec.gov/rules-regulations', official: true }
+                    ]
+                },
+                {
+                    title: 'Enforcement & Directives',
+                    links: [
+                        { label: 'Disciplinary Actions', desc: 'Official monthly disciplinary decisions.', url: 'https://www.finra.org/rules-guidance/enforcement', official: true },
+                        { label: 'SEC Guidance Releases', desc: 'Division of examinations risk alerts.', url: 'https://www.sec.gov/exams', official: true }
+                    ]
+                }
+            ],
+            'Registration & Exams': [
+                {
+                    title: 'Official Registrations',
+                    links: [
+                        { label: 'CRD Database Portal', desc: 'Central Registration Depository for firms.', url: 'https://www.finra.org/registration-exams-ce/classic-crd', official: true },
+                        { label: 'FinPro Personal Gateway', desc: 'Professional filing & license verification.', url: 'https://www.finra.org/registration-exams-ce/finpro', official: true }
+                    ]
+                },
+                {
+                    title: 'Qualifications & CE',
+                    links: [
+                        { label: 'Qualification Exams', desc: 'Series 7, 63, and 24 exam schedules.', url: 'https://www.finra.org/registration-exams-ce/qualification-exams', official: true },
+                        { label: 'Continuing Education (CE)', desc: 'Regulatory and firm element CE programs.', url: 'https://www.finra.org/registration-exams-ce/continuing-education', official: true }
+                    ]
+                }
+            ],
+            'Filing & Reporting': [
+                {
+                    title: 'Filing Portals',
+                    links: [
+                        { label: 'FINRA Gateway', desc: 'Secure institutional compliance filings.', url: 'https://gateway.finra.org/', official: true },
+                        { label: 'Electronic Filing System', desc: 'Annual audit & regulatory report filings.', url: 'https://www.finra.org/filing-reporting', official: true }
+                    ]
+                },
+                {
+                    title: 'SEC EDGAR & Reports',
+                    links: [
+                        { label: 'SEC EDGAR Database', desc: 'Public company disclosure retrieval.', url: 'https://www.sec.gov/edgar/searchedgar/companysearch', official: true },
+                        { label: 'Report Center Analytics', desc: 'FINRA firm risk monitoring & reports.', url: 'https://www.finra.org/filing-reporting/report-center', official: true }
+                    ]
+                }
+            ],
+            'Investor Protection': [
+                {
+                    title: 'Public Registries',
+                    links: [
+                        { label: 'FINRA BrokerCheck', desc: 'Instant public broker & firm background check.', url: 'https://brokercheck.finra.org/', official: true },
+                        { label: 'File a Complaint', desc: 'Official regulatory complaint filing center.', url: 'https://www.finra.org/investors/need-help/file-a-complaint', official: true }
+                    ]
+                },
+                {
+                    title: 'Federal Resources',
+                    links: [
+                        { label: 'SEC Investor.gov', desc: 'Federal tools for investor protection.', url: 'https://www.investor.gov/', official: true },
+                        { label: 'Dispute Mediation Forum', desc: 'Securities arbitration and dispute handling.', url: 'https://www.finra.org/arbitration-mediation', official: true }
+                    ]
+                }
+            ],
+            'Our Provisions': [
+                {
+                    title: 'Direct Client Provisions',
+                    links: [
+                        { label: 'CA Certification Services', desc: 'Certificate Authority & PKI infrastructure.', url: '#sector-ca-cert', ourService: true },
+                        { label: 'Broker Solutions Desk', desc: 'Certified broker matching & dealer consulting.', url: '#sector-brokers', ourService: true }
+                    ]
+                },
+                {
+                    title: 'Advisory & Reviews',
+                    links: [
+                        { label: 'Operational Audits', desc: 'Forensic process and control reviews.', url: '#sector-audit', ourService: true },
+                        { label: 'Corporate Strategy', desc: 'Governance and institutional alignment.', url: '#sector-strategy', ourService: true }
+                    ]
+                }
+            ]
+        };
+
+        const navContainer = document.getElementById('mainNav');
+        for (const [category, columns] of Object.entries(navigationStructure)) {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'nav-item';
+            const aTag = document.createElement('a');
+            aTag.href = '#';
+            aTag.className = 'nav-link';
+            aTag.innerHTML = `${category} <span class="arrow">▼</span>`;
+            
+            const panel = document.createElement('div');
+            panel.className = 'dropdown-panel';
+            columns.forEach(col => {
+                const colDiv = document.createElement('div');
+                colDiv.className = 'dropdown-column';
+                colDiv.innerHTML = `<h4><span>${col.title}</span> ${col.links[0]?.official ? '<span class="channel-tag official">Official ↗</span>' : '<span class="channel-tag our-service">Our Provision ★</span>'}</h4>`;
+                const ul = document.createElement('ul');
+                col.links.forEach(l => {
+                    const isExt = l.official;
+                    const targetAttr = isExt ? 'target="_blank" rel="noopener noreferrer"' : '';
+                    const tagMarkup = isExt ? '<span class="channel-tag official">Official ↗</span>' : '<span class="channel-tag our-service">Our Provision ★</span>';
+                    ul.innerHTML += `<li><a href="${l.url}" ${targetAttr}><div class="item-title"><span>${l.label}</span> ${tagMarkup}</div><div class="item-desc">${l.desc}</div></a></li>`;
+                });
+                colDiv.appendChild(ul);
+                panel.appendChild(colDiv);
+            });
+            itemDiv.appendChild(aTag);
+            itemDiv.appendChild(panel);
+            itemDiv.onmouseenter = () => itemDiv.classList.add('active');
+            itemDiv.onmouseleave = () => itemDiv.classList.remove('active');
+            navContainer.appendChild(itemDiv);
+        }
+
+        function preselectService(val) {
+            const select = document.getElementById('serviceCategory');
+            if (select) {
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value.includes(val) || val.includes(select.options[i].value)) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // --- 2. MATCHING SCRIPT IMAGE RENDERING ENGINE ---
+        // Dynamically renders custom visual illustrations for each sector
+        let animationFrameId = null;
+        let tick = 0;
+
+        function setupCanvasHighDPI(c) {
+            const rect = c.getBoundingClientRect();
+            const dpr = window.devicePixelRatio || 1;
+            c.width = rect.width * dpr;
+            c.height = rect.height * dpr;
+            const ctx = c.getContext('2d');
+            ctx.scale(dpr, dpr);
+            return { ctx, width: rect.width, height: rect.height };
+        }
+
+        // Canvas 1: CA Certification & PKI Trust Root
+        function drawCACertificateImage(canvas) {
+            if (!canvas) return;
+            const { ctx, width, height } = setupCanvasHighDPI(canvas);
+            
+            // Background
+            const bgGrad = ctx.createLinearGradient(0, 0, width, height);
+            bgGrad.addColorStop(0, '#040d1a');
+            bgGrad.addColorStop(0.5, '#07172c');
+            bgGrad.addColorStop(1, '#020b18');
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, width, height);
+
+            // Guilloche / Security Pattern lines
+            ctx.save();
+            ctx.strokeStyle = 'rgba(56, 189, 248, 0.08)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < width; i += 24) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(width - i, height);
+                ctx.stroke();
+            }
+            ctx.restore();
+
+            // Concentric trust rings behind seal
+            const centerX = width * 0.5;
+            const centerY = height * 0.48;
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.rotate(tick * 0.005);
+            ctx.strokeStyle = 'rgba(245, 158, 11, 0.25)';
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([8, 8]);
+            ctx.beginPath();
+            ctx.arc(0, 0, 72, 0, Math.PI * 2);
+            ctx.stroke();
+
+            ctx.rotate(-tick * 0.01);
+            ctx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
+            ctx.beginPath();
+            ctx.arc(0, 0, 56, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.restore();
+
+            // PKI Trust Chain Pipeline (Root CA -> Intermediate CA -> Primero End-Entity)
+            const nodeY = height * 0.22;
+            const nodes = [
+                { label: 'ROOT CA', x: width * 0.22, color: '#f59e0b' },
+                { label: 'INTERMEDIATE CA', x: width * 0.5, color: '#38bdf8' },
+                { label: 'PRIMERO X.509', x: width * 0.78, color: '#10b981' }
+            ];
+
+            // Pipeline connectors
+            ctx.strokeStyle = 'rgba(56, 189, 248, 0.4)';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(nodes[0].x, nodeY);
+            ctx.lineTo(nodes[2].x, nodeY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Animated packet traversing chain
+            const packetPos = (tick * 1.5) % (nodes[2].x - nodes[0].x);
+            ctx.beginPath();
+            ctx.arc(nodes[0].x + packetPos, nodeY, 4, 0, Math.PI * 2);
+            ctx.fillStyle = '#38bdf8';
+            ctx.shadowColor = '#38bdf8';
+            ctx.shadowBlur = 10;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            // Draw Node Badges
+            nodes.forEach(n => {
+                ctx.fillStyle = '#0f172a';
+                ctx.strokeStyle = n.color;
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.roundRect(n.x - 48, nodeY - 14, 96, 28, 4);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.fillStyle = n.color;
+                ctx.font = 'bold 9px "JetBrains Mono", monospace';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(n.label, n.x, nodeY);
+            });
+
+            // Golden Cryptographic Seal Emblem
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            
+            // Outer golden glow
+            ctx.beginPath();
+            ctx.arc(0, 0, 40, 0, Math.PI * 2);
+            const sealGrad = ctx.createRadialGradient(0, 0, 10, 0, 0, 42);
+            sealGrad.addColorStop(0, '#fef3c7');
+            sealGrad.addColorStop(0.6, '#f59e0b');
+            sealGrad.addColorStop(1, '#b45309');
+            ctx.fillStyle = sealGrad;
+            ctx.shadowColor = 'rgba(245, 158, 11, 0.5)';
+            ctx.shadowBlur = 16;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            // Inner dark aperture
+            ctx.beginPath();
+            ctx.arc(0, 0, 30, 0, Math.PI * 2);
+            ctx.fillStyle = '#001e38';
+            ctx.fill();
+
+            // Padlock Icon
+            ctx.fillStyle = '#fef3c7';
+            ctx.strokeStyle = '#fef3c7';
+            ctx.lineWidth = 2.5;
+            // Padlock Shackle
+            ctx.beginPath();
+            ctx.arc(0, -5, 9, Math.PI, 0);
+            ctx.stroke();
+            // Padlock Body
+            ctx.beginPath();
+            ctx.roundRect(-11, -3, 22, 17, 3);
+            ctx.fill();
+            // Keyhole
+            ctx.fillStyle = '#001e38';
+            ctx.beginPath();
+            ctx.arc(0, 3, 2.5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillRect(-1.2, 3, 2.4, 6);
+            ctx.restore();
+
+            // Live Hash Stream Footer
+            const hashes = [
+                'SHA384: e9b4...21ad',
+                'ECDSA_P384',
+                'OCSP: STAPLED_OK',
+                'KEY_USAGE: DIGITAL_SIGNATURE'
+            ];
+            ctx.fillStyle = 'rgba(56, 189, 248, 0.85)';
+            ctx.font = '9px "JetBrains Mono", monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText(hashes.join('  |  '), width * 0.5, height - 16);
+        }
+
+        // Canvas 2: Broker Solutions & Execution Desk
+        function drawBrokersImage(canvas) {
+            if (!canvas) return;
+            const { ctx, width, height } = setupCanvasHighDPI(canvas);
+
+            // Dark Trading Terminal Background
+            ctx.fillStyle = '#070f1a';
+            ctx.fillRect(0, 0, width, height);
+
+            // Grid lines
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
+            ctx.lineWidth = 1;
+            for (let y = 30; y < height - 30; y += 25) {
+                ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
+            }
+            for (let x = 40; x < width; x += 40) {
+                ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, height); ctx.stroke();
+            }
+
+            // Depth of Market (Volume Histogram in background)
+            const numBars = 16;
+            const barW = (width - 60) / numBars;
+            for (let i = 0; i < numBars; i++) {
+                const isBid = i < 8;
+                const h = 20 + Math.sin(i * 0.8 + tick * 0.05) * 15 + (isBid ? 15 : 10);
+                ctx.fillStyle = isBid ? 'rgba(16, 185, 129, 0.12)' : 'rgba(239, 68, 68, 0.12)';
+                ctx.fillRect(30 + i * barW, height - 35 - h, barW - 4, h);
+            }
+
+            // Realistic Financial Candlesticks
+            const candles = [
+                { open: 120, close: 135, high: 142, low: 115 },
+                { open: 135, close: 128, high: 139, low: 124 },
+                { open: 128, close: 145, high: 148, low: 125 },
+                { open: 145, close: 160, high: 168, low: 140 },
+                { open: 160, close: 152, high: 164, low: 148 },
+                { open: 152, close: 170, high: 175, low: 150 },
+                { open: 170, close: 165, high: 173, low: 160 },
+                { open: 165, close: 185, high: 192, low: 162 },
+                { open: 185, close: 180, high: 189, low: 176 },
+                { open: 180, close: 200, high: 206, low: 178 }
+            ];
+
+            const cW = (width - 80) / candles.length;
+            const baselineY = height * 0.85;
+
+            candles.forEach((c, idx) => {
+                const cx = 40 + idx * cW + cW * 0.5;
+                const isBull = c.close >= c.open;
+                const color = isBull ? '#10b981' : '#ef4444';
+
+                // Wick
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(cx, baselineY - c.high);
+                ctx.lineTo(cx, baselineY - c.low);
+                ctx.stroke();
+
+                // Candle Body
+                const bodyTop = baselineY - Math.max(c.open, c.close);
+                const bodyH = Math.max(Math.abs(c.close - c.open), 3);
+                ctx.fillStyle = color;
+                ctx.fillRect(cx - (cW * 0.32), bodyTop, cW * 0.64, bodyH);
+            });
+
+            // Moving Average Ribbon (Cyan)
+            ctx.strokeStyle = '#38bdf8';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            candles.forEach((c, idx) => {
+                const cx = 40 + idx * cW + cW * 0.5;
+                const my = baselineY - ((c.open + c.close) / 2) - 8;
+                if (idx === 0) ctx.moveTo(cx, my);
+                else ctx.lineTo(cx, my);
+            });
+            ctx.stroke();
+
+            // Header Ticker Bar
+            ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+            ctx.fillRect(0, 0, width, 26);
+            ctx.fillStyle = '#10b981';
+            ctx.font = 'bold 9px "JetBrains Mono", monospace';
+            ctx.textAlign = 'left';
+            ctx.fillText('EUR/USD 1.0942 ▲ +0.64%', 12, 16);
+            ctx.fillStyle = '#38bdf8';
+            ctx.fillText('BROKER DESK // ROUTE: DIRECT DMA', width * 0.45, 16);
+            ctx.fillStyle = '#f59e0b';
+            ctx.textAlign = 'right';
+            ctx.fillText('EXEC: 12ms', width - 12, 16);
+
+            // Active Trade Handshake Icon
+            ctx.save();
+            ctx.translate(width - 50, height * 0.5);
+            ctx.fillStyle = 'rgba(2, 132, 199, 0.2)';
+            ctx.strokeStyle = '#0284c7';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.arc(0, 0, 22, 0, Math.PI * 2);
+            ctx.fill(); ctx.stroke();
+            ctx.fillStyle = '#38bdf8';
+            ctx.font = '12px "Open Sans"';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('⇄', 0, 0);
+            ctx.restore();
+        }
+
+        // Canvas 3: Operational Audit & Forensic Radar
+        function drawAuditImage(canvas) {
+            if (!canvas) return;
+            const { ctx, width, height } = setupCanvasHighDPI(canvas);
+
+            ctx.fillStyle = '#060f1c';
+            ctx.fillRect(0, 0, width, height);
+
+            const cx = width * 0.5;
+            const cy = height * 0.52;
+            const radius = Math.min(width, height) * 0.42;
+
+            // Concentric radar rings
+            ctx.strokeStyle = 'rgba(16, 185, 129, 0.2)';
+            ctx.lineWidth = 1;
+            for (let r = radius * 0.25; r <= radius; r += radius * 0.25) {
+                ctx.beginPath();
+                ctx.arc(cx, cy, r, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // Radar Axis Crosshairs
+            ctx.beginPath();
+            ctx.moveTo(cx - radius, cy); ctx.lineTo(cx + radius, cy);
+            ctx.moveTo(cx, cy - radius); ctx.lineTo(cx, cy + radius);
+            ctx.stroke();
+
+            // Rotating Radar Sweep Beam
+            const sweepAngle = (tick * 0.035) % (Math.PI * 2);
+            const sweepGrad = ctx.createConicGradient(sweepAngle, cx, cy);
+            sweepGrad.addColorStop(0, 'rgba(16, 185, 129, 0.45)');
+            sweepGrad.addColorStop(0.12, 'rgba(16, 185, 129, 0.0)');
+            sweepGrad.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
+
+            ctx.fillStyle = sweepGrad;
+            ctx.beginPath();
+            ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Detected Verified Audit Nodes
+            const auditNodes = [
+                { angle: 0.6, dist: 0.65, label: 'LEDGER: PASS' },
+                { angle: 2.1, dist: 0.45, label: 'CONTROLS: 100%' },
+                { angle: 3.8, dist: 0.8, label: 'SUPERVISORY: OK' },
+                { angle: 5.2, dist: 0.55, label: 'FORENSIC: VERIFIED' }
+            ];
+
+            auditNodes.forEach(n => {
+                const nx = cx + Math.cos(n.angle) * radius * n.dist;
+                const ny = cy + Math.sin(n.angle) * radius * n.dist;
+
+                ctx.beginPath();
+                ctx.arc(nx, ny, 3.5, 0, Math.PI * 2);
+                ctx.fillStyle = '#10b981';
+                ctx.shadowColor = '#10b981'; ctx.shadowBlur = 8;
+                ctx.fill(); ctx.shadowBlur = 0;
+
+                ctx.fillStyle = '#a7f3d0';
+                ctx.font = '8px "JetBrains Mono", monospace';
+                ctx.textAlign = 'left';
+                ctx.fillText(n.label, nx + 6, ny - 3);
+            });
+
+            // Shield Centerpiece
+            ctx.fillStyle = '#0f172a';
+            ctx.strokeStyle = '#10b981';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - 14);
+            ctx.lineTo(cx + 12, cy - 8);
+            ctx.lineTo(cx + 12, cy + 6);
+            ctx.lineTo(cx, cy + 14);
+            ctx.lineTo(cx - 12, cy + 6);
+            ctx.lineTo(cx - 12, cy - 8);
+            ctx.closePath();
+            ctx.fill(); ctx.stroke();
+
+            // Checkmark
+            ctx.strokeStyle = '#10b981';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(cx - 5, cy);
+            ctx.lineTo(cx - 1, cy + 4);
+            ctx.lineTo(cx + 6, cy - 4);
+            ctx.stroke();
+
+            // Top Status Bar
+            ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+            ctx.fillRect(0, 0, width, 24);
+            ctx.fillStyle = '#38bdf8';
+            ctx.font = 'bold 9px "JetBrains Mono", monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText('AUDIT ENGINE ACTIVE // INTEGRITY INDEX: 99.98% // 0 DEFICIENCIES', width * 0.5, 16);
+        }
+
+        // Canvas 4: Corporate Strategy Topology Graph
+        function drawStrategyImage(canvas) {
+            if (!canvas) return;
+            const { ctx, width, height } = setupCanvasHighDPI(canvas);
+
+            ctx.fillStyle = '#060e1d';
+            ctx.fillRect(0, 0, width, height);
+
+            // Enterprise Hub Nodes
+            const hubs = [
+                { x: width * 0.18, y: height * 0.65, label: 'GOVERNANCE', color: '#38bdf8' },
+                { x: width * 0.38, y: height * 0.35, label: 'CAPITAL', color: '#0284c7' },
+                { x: width * 0.65, y: height * 0.3, label: 'REGULATORY', color: '#10b981' },
+                { x: width * 0.82, y: height * 0.7, label: 'GLOBAL EXPANSION', color: '#f59e0b' },
+                { x: width * 0.5, y: height * 0.78, label: 'PRIMERO CORE', color: '#ffffff' }
+            ];
+
+            // Interconnecting Links
+            const links = [
+                [0, 1], [1, 2], [2, 3], [3, 4], [4, 0], [1, 4], [2, 4]
+            ];
+
+            ctx.lineWidth = 1.5;
+            links.forEach(([i, j]) => {
+                ctx.strokeStyle = 'rgba(56, 189, 248, 0.25)';
+                ctx.beginPath();
+                ctx.moveTo(hubs[i].x, hubs[i].y);
+                ctx.lineTo(hubs[j].x, hubs[j].y);
+                ctx.stroke();
+
+                // Pulsing data packet
+                const progress = ((tick * 0.02) + (i * 0.3)) % 1;
+                const px = hubs[i].x + (hubs[j].x - hubs[i].x) * progress;
+                const py = hubs[i].y + (hubs[j].y - hubs[i].y) * progress;
+                ctx.beginPath();
+                ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+                ctx.fillStyle = '#38bdf8';
+                ctx.fill();
+            });
+
+            // Ascending Strategic Curve (Growth trajectory)
+            ctx.save();
+            ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+            ctx.lineWidth = 3;
+            ctx.setLineDash([6, 6]);
+            ctx.beginPath();
+            ctx.moveTo(width * 0.1, height * 0.85);
+            ctx.bezierCurveTo(width * 0.4, height * 0.8, width * 0.6, height * 0.4, width * 0.9, height * 0.2);
+            ctx.stroke();
+            ctx.restore();
+
+            // Draw Hubs
+            hubs.forEach(h => {
+                ctx.beginPath();
+                ctx.arc(h.x, h.y, 8, 0, Math.PI * 2);
+                ctx.fillStyle = h.color;
+                ctx.shadowColor = h.color; ctx.shadowBlur = 10;
+                ctx.fill(); ctx.shadowBlur = 0;
+
+                ctx.beginPath();
+                ctx.arc(h.x, h.y, 14, 0, Math.PI * 2);
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                ctx.fillStyle = '#e2e8f0';
+                ctx.font = 'bold 8.5px "JetBrains Mono", monospace';
+                ctx.textAlign = 'center';
+                ctx.fillText(h.label, h.x, h.y + 24);
+            });
+
+            // Header Ribbon
+            ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+            ctx.fillRect(0, 0, width, 24);
+            ctx.fillStyle = '#f59e0b';
+            ctx.font = 'bold 9px "JetBrains Mono", monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText('MULTI-TIER INSTITUTIONAL TOPOLOGY // GOVERNANCE MATRIX OPTIMIZED', width * 0.5, 16);
+        }
+
+        // Canvas 5: Secure Client Gateway & Relay Conduit
+        function drawGatewayImage(canvas) {
+            if (!canvas) return;
+            const { ctx, width, height } = setupCanvasHighDPI(canvas);
+
+            ctx.fillStyle = '#050b16';
+            ctx.fillRect(0, 0, width, height);
+
+            const cx = width * 0.5;
+            const cy = height * 0.5;
+
+            // Cybernetic Vault Iris Rings
+            for (let i = 0; i < 4; i++) {
+                ctx.save();
+                ctx.translate(cx, cy);
+                ctx.rotate(tick * 0.01 * (i % 2 === 0 ? 1 : -1) + (i * 0.5));
+                ctx.strokeStyle = i === 0 ? '#38bdf8' : 'rgba(56, 189, 248, 0.3)';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                const r = 25 + i * 20;
+                ctx.arc(0, 0, r, 0, Math.PI * 1.5);
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            // Fiber optic data packets flowing horizontally into vault
+            for (let row = -2; row <= 2; row++) {
+                const y = cy + row * 24;
+                ctx.strokeStyle = 'rgba(2, 132, 199, 0.15)';
+                ctx.lineWidth = 1;
+                ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
+
+                // Packets
+                const pxLeft = (tick * 2.5 + row * 60) % (cx - 30);
+                ctx.beginPath(); ctx.arc(pxLeft, y, 2.5, 0, Math.PI * 2);
+                ctx.fillStyle = '#38bdf8'; ctx.fill();
+
+                const pxRight = cx + 30 + ((tick * 2.5 + row * 40) % (width - cx - 30));
+                ctx.beginPath(); ctx.arc(pxRight, y, 2.5, 0, Math.PI * 2);
+                ctx.fillStyle = '#10b981'; ctx.fill();
+            }
+
+            // Center Vault Shield Core
+            ctx.beginPath();
+            ctx.arc(cx, cy, 18, 0, Math.PI * 2);
+            ctx.fillStyle = '#0f172a';
+            ctx.strokeStyle = '#38bdf8';
+            ctx.lineWidth = 2;
+            ctx.fill(); ctx.stroke();
+
+            ctx.fillStyle = '#38bdf8';
+            ctx.font = '10px "JetBrains Mono", monospace';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('TLS', cx, cy);
+
+            // Bottom Status
+            ctx.fillStyle = 'rgba(56, 189, 248, 0.9)';
+            ctx.font = 'bold 9px "JetBrains Mono", monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText('CONDUIT: AES-256-GCM  |  MUTUAL TLS 1.3  |  ZERO-TRUST RELAY', width * 0.5, height - 14);
+        }
+
+        // Global Loop for Sector Script Images
+        function renderAllSectorImages() {
+            tick++;
+            drawCACertificateImage(document.getElementById('canvas-ca-cert'));
+            drawBrokersImage(document.getElementById('canvas-brokers'));
+            drawAuditImage(document.getElementById('canvas-audit'));
+            drawStrategyImage(document.getElementById('canvas-strategy'));
+            drawGatewayImage(document.getElementById('canvas-gateway'));
+            animationFrameId = requestAnimationFrame(renderAllSectorImages);
+        }
+
+        // --- 3. Script Image Export & Inspection Functions ---
+        function exportScriptImage(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const link = document.createElement('a');
+            link.download = filename || 'sector-script-image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            showToast(`Exported ${filename} successfully!`);
+        }
+
+        function inspectScriptCanvas(canvasId, title) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const modal = document.getElementById('inspectOverlay');
+            const img = document.getElementById('inspectModalImg');
+            const titleEl = document.getElementById('inspectModalTitle');
+            const btn = document.getElementById('inspectDownloadBtn');
+
+            img.src = canvas.toDataURL('image/png');
+            titleEl.innerText = title.toUpperCase();
+            btn.onclick = () => exportScriptImage(canvasId, `${canvasId}-hd.png`);
+            modal.style.display = 'flex';
+        }
+
+        function closeInspectOverlay(e) {
+            document.getElementById('inspectOverlay').style.display = 'none';
+        }
+
+        // --- 4. Chat Widget Control Logic ---
+        let isHumanMode = false;
+        let liveVisitorTranscripts = [];
+
+        function toggleChatWindow() {
+            const m = document.getElementById('chatModal');
+            m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+            if (m.style.display === 'flex') {
+                document.getElementById('chatInputBox').focus();
+            }
+        }
+
+        function openChatWidget() {
+            const m = document.getElementById('chatModal');
+            m.style.display = 'flex';
+            document.getElementById('chatInputBox').focus();
+        }
+
+        function openChatWidgetWithHuman() { 
+            openChatWidget(); 
+            switchToHumanAgent(); 
+        }
+
+        function sendUserMessage() {
+            const input = document.getElementById('chatInputBox');
+            const txt = input.value.trim();
+            if (!txt) return;
+
+            appendMessage(txt, 'user');
+            input.value = '';
+
+            const timestamp = new Date().toLocaleTimeString();
+            liveVisitorTranscripts.push({ sender: 'visitor', text: txt, time: timestamp });
+
+            if (isHumanMode) {
+                setTimeout(() => {
+                    appendMessage("Your inquiry has been queued for our live Primero Srv specialist desk. A consultant will review your specifications shortly.", 'agent');
+                }, 1000);
+            } else {
+                setTimeout(() => {
+                    let reply = "Primero Srv LLC provides accredited CA Certification (PKI/X.509) and Certified Broker Solutions. Our header also provides direct routing to official regulatory portals (FINRA, SEC, BrokerCheck). How can we assist your organization?";
+                    const lower = txt.toLowerCase();
+                    if (lower.includes('ca') || lower.includes('cert') || lower.includes('pki') || lower.includes('x.509') || lower.includes('ssl') || lower.includes('tls')) {
+                        reply = "Our CA Certification provision provides root & intermediate CA deployment, X.509 digital certificates, HSM key generation, and cryptographic chain validation. Submit an inquiry form or email ca-cert@primerosrv.com.";
+                    } else if (lower.includes('broker') || lower.includes('dealer') || lower.includes('trade') || lower.includes('crd')) {
+                        reply = "Our Broker Solutions provision connects institutions with certified broker-dealers, introduces clearing logistics, and advises on registration requirements. For official broker license checks, use the BrokerCheck link in our header!";
+                    } else if (lower.includes('finra') || lower.includes('sec') || lower.includes('official') || lower.includes('rule')) {
+                        reply = "The header navigation links directly to official channels: FINRA Rulebook, BrokerCheck, FINRA Gateway, and SEC EDGAR. We also advise on aligning your firm's workflows with these standards.";
+                    }
+                    appendMessage(reply, 'bot');
+                }, 750);
+            }
+        }
+
+        function handleChatPress(e) { if (e.key === 'Enter') sendUserMessage(); }
+
+        function appendMessage(text, sender) {
+            const box = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = `msg ${sender}`;
+            div.innerText = text;
+            box.appendChild(div);
+            box.scrollTop = box.scrollHeight;
+        }
+
+        function switchToHumanAgent() {
+            isHumanMode = true;
+            document.getElementById('chatTitle').innerText = 'Primero Srv Specialist';
+            document.getElementById('chatSubtitle').innerText = 'Connected to Advisory & Brokerage Desk';
+            document.getElementById('humanBtn').style.display = 'none';
+            appendMessage("You are now connected with the Primero Srv live specialist channel. A senior advisory consultant is reviewing your session.", 'agent');
+        }
+
+        // --- 5. Embedded Terminal REPL Logic ---
+        function toggleTerminal() {
+            const overlay = document.getElementById('terminalOverlay');
+            overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
+            if (overlay.style.display === 'flex') document.getElementById('termInput').focus();
+        }
+
+        function handleTermPress(e) {
+            if (e.key === 'Enter') {
+                const input = document.getElementById('termInput');
+                const cmd = input.value.trim();
+                if (!cmd) return;
+
+                appendTerminalLine(`client@primerosrv:~$ ${cmd}`, '#38bdf8');
+                processTerminalCommand(cmd);
+                input.value = '';
+            }
+        }
+
+        function appendTerminalLine(text, color = '#10b981') {
+            const screen = document.getElementById('termScreen');
+            const div = document.createElement('div');
+            div.style.color = color;
+            div.style.marginTop = '4px';
+            div.innerText = text;
+            screen.appendChild(div);
+            screen.scrollTop = screen.scrollHeight;
+        }
+
+        function processTerminalCommand(cmd) {
+            const c = cmd.toLowerCase().trim();
+            if (c === 'help') {
+                appendTerminalLine("Available Directives:\n - ca_cert          : Overview of CA Certification & PKI provision\n - brokers          : Details on Certified Broker Solutions\n - official_channels: Authoritative regulatory endpoints (FINRA, SEC)\n - sectors          : List all active practice areas with script images\n - status           : Check platform gateway operational status\n - admin_queue      : View live visitor chat relay transcripts\n - clear            : Flush terminal buffer", '#f59e0b');
+            } else if (c === 'ca_cert') {
+                appendTerminalLine("[PROVISION 01] CA Certification & PKI Services:\n - Root & Intermediate CA setup\n - X.509 v3 Digital Certificates\n - Hardware Security Module (HSM) deployment\n - Contact: ca-cert@primerosrv.com", '#38bdf8');
+            } else if (c === 'brokers') {
+                appendTerminalLine("[PROVISION 02] Brokerage & Intermediary Solutions:\n - Independent broker-dealer matching\n - Introducing Broker (IB) logistics\n - Trade execution desk consulting\n - Contact: brokers@primerosrv.com", '#38bdf8');
+            } else if (c === 'official_channels') {
+                appendTerminalLine("Official Authoritative Channels:\n - FINRA: https://www.finra.org\n - BrokerCheck: https://brokercheck.finra.org\n - SEC: https://www.sec.gov\n - FINRA Gateway: https://gateway.finra.org", '#10b981');
+            } else if (c === 'sectors') {
+                appendTerminalLine("Sectors Rendered with Matching Script Images:\n 1. CA Certification (canvas-ca-cert)\n 2. Broker Solutions (canvas-brokers)\n 3. Operational Audits (canvas-audit)\n 4. Corporate Strategy (canvas-strategy)\n 5. Secure Gateway (canvas-gateway)", '#38bdf8');
+            } else if (c === 'status') {
+                appendTerminalLine("[OK] Primero Srv Gateway: OPERATIONAL (us-east-2)", '#10b981');
+                appendTerminalLine("[OK] Script Image Vector Engine: ACTIVE (60 FPS)", '#10b981');
+                appendTerminalLine("[OK] Netlify Forms Listener: READY", '#10b981');
+            } else if (c === 'clear') {
+                document.getElementById('termScreen').innerHTML = '';
+            } else if (c === 'admin_queue') {
+                appendTerminalLine("--- LIVE VISITOR CHAT RELAY QUEUE ---", '#f59e0b');
+                if (liveVisitorTranscripts.length === 0) {
+                    appendTerminalLine("Queue is currently empty. Start a conversation in the widget to log items.", '#94a3b8');
+                } else {
+                    liveVisitorTranscripts.forEach((t) => {
+                        appendTerminalLine(`[${t.time}] ${t.sender.toUpperCase()}: ${t.text}`, '#f8fafc');
+                    });
+                }
+            } else {
+                appendTerminalLine(`Directive not recognized: '${cmd}'. Type 'help' for commands.`, '#ef4444');
+            }
+        }
+
+        // --- 6. Netlify Forms Submission Handling ---
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+
+            fetch('/__forms.html', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(data).toString()
+            }).then(() => {
+                showToast("Inquiry submitted successfully! A Primero Srv specialist will respond promptly.");
+                form.reset();
+            }).catch(() => {
+                showToast("Inquiry received. We will be in touch shortly.");
+                form.reset();
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toastMsg');
+            toast.innerText = msg;
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 4000);
+        }
+
+        // --- 7. Hero Background Mesh Canvas ---
+        const heroCanvas = document.getElementById('heroCanvas');
+        const heroCtx = heroCanvas.getContext('2d');
+        let heroNodes = [];
+        function initHeroSim() {
+            heroCanvas.width = heroCanvas.parentElement.clientWidth;
+            heroCanvas.height = heroCanvas.parentElement.clientHeight;
+            heroNodes = [];
+            for (let i = 0; i < 35; i++) {
+                heroNodes.push({ 
+                    x: Math.random() * heroCanvas.width, 
+                    y: Math.random() * heroCanvas.height, 
+                    vx: (Math.random() - 0.5) * 0.5, 
+                    vy: (Math.random() - 0.5) * 0.5, 
+                    radius: Math.random() * 2 + 1 
+                });
+            }
+        }
+        window.addEventListener('resize', () => {
+            initHeroSim();
+        });
+        initHeroSim();
+
+        function heroLoop() {
+            heroCtx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+            heroNodes.forEach((n, idx) => {
+                n.x += n.vx; n.y += n.vy;
+                if (n.x < 0 || n.x > heroCanvas.width) n.vx *= -1;
+                if (n.y < 0 || n.y > heroCanvas.height) n.vy *= -1;
+                heroCtx.beginPath(); heroCtx.arc(n.x, n.y, n.radius, 0, Math.PI * 2); heroCtx.fillStyle = '#38bdf8'; heroCtx.fill();
+                for (let j = idx + 1; j < heroNodes.length; j++) {
+                    const t = heroNodes[j], d = Math.hypot(n.x - t.x, n.y - t.y);
+                    if (d < 110) { 
+                        heroCtx.strokeStyle = `rgba(56, 189, 248, ${0.4 * (1 - d/110)})`; 
+                        heroCtx.lineWidth = 0.5; 
+                        heroCtx.beginPath(); heroCtx.moveTo(n.x, n.y); heroCtx.lineTo(t.x, t.y); heroCtx.stroke(); 
+                    }
+                }
+            });
+            requestAnimationFrame(heroLoop);
+        }
+        heroLoop();
+
+        // Start Sector Script Images Rendering Loop on load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderAllSectorImages();
+        });
+    </script>
+</body>
+</html>

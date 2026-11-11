@@ -1,0 +1,20 @@
+{
+  "name": "the-source-fragrance-house",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "The Source — Private Fragrance House and Admin Command Matrix",
+  "scripts": {
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@google/genai": "^2.24.0",
+    "@netlify/database": "^1.1.0",
+    "@netlify/functions": "^3.0.0",
+    "drizzle-orm": "beta"
+  },
+  "devDependencies": {
+    "drizzle-kit": "beta",
+    "typescript": "^5.7.0"
+  }
+}

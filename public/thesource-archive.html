@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Source — Private Fragrance House</title>
+  <meta name="siteName" content="The Source — Private Fragrance House" />
+  <meta name="siteDescription" content="Quiet luxury fragrances sourced with discretion. Available now or bespoke sourcing on request. Nigerian delivery within Benin, Warri, Asaba, Lagos, Abuja and Abraka." />
+  <meta name="description" content="The Source — Quiet luxury fragrances. Available now or Source on request. Nigerian delivery only." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              50: '#fbf8f1',
+              100: '#f5ecd8',
+              200: '#ead7b0',
+              300: '#dbbc7e',
+              400: '#c99a4f',
+              500: '#b8833a',
+              600: '#9e6a30',
+              700: '#7f5229',
+              800: '#6a4327',
+              900: '#5a3924',
+            },
+            ink: {
+              50: '#f7f7f6',
+              100: '#e3e3e0',
+              200: '#c8c7c2',
+              300: '#a6a49c',
+              400: '#85827a',
+              500: '#6b6860',
+              600: '#55534c',
+              700: '#464440',
+              800: '#3b3a36',
+              900: '#333230',
+              950: '#1c1b19',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .product-card img, .bottle-art { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+    .product-card:hover .bottle-art { transform: scale(1.04); }
+    .marquee { animation: marquee 40s linear infinite; }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .thumb-active { ring: 2px solid #b8833a; }
+    .thumb-strip::-webkit-scrollbar { height: 4px; }
+    .thumb-strip::-webkit-scrollbar-track { background: transparent; }
+    .thumb-strip::-webkit-scrollbar-thumb { background: #b8833a55; border-radius: 4px; }
+  </style>
+</head>
+<body class="bg-ink-50 text-ink-900 dark:bg-ink-950 dark:text-ink-100 transition-colors duration-300">
+
+  <!-- ========== HEADER ========== -->
+  <header class="sticky top-0 z-50 bg-ink-50/90 dark:bg-ink-950/90 backdrop-blur-md border-b border-ink-200/60 dark:border-ink-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#" class="font-serif text-xl md:text-2xl tracking-tight text-ink-900 dark:text-gold-200">
+          The Source
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm tracking-wide">
+          <a href="#collection" class="hover:text-gold-600 dark:hover:text-gold-400 transition">Collection</a>
+          <a href="#kiosk" class="hover:text-gold-600 dark:hover:text-gold-400 transition">Scent Kiosk</a>
+          <a href="#process" class="hover:text-gold-600 dark:hover:text-gold-400 transition">Process</a>
+          <a href="#inquire" class="hover:text-gold-600 dark:hover:text-gold-400 transition">Inquire</a>
+          <a href="/admin" class="hover:text-gold-600 dark:hover:text-gold-400 text-xs uppercase tracking-wider text-ink-400 dark:text-ink-500 border border-ink-300 dark:border-ink-700 px-2 py-1 rounded transition">Admin Matrix</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <button id="theme-toggle" class="p-2 rounded-full hover:bg-ink-200/50 dark:hover:bg-ink-800/50 transition" aria-label="Toggle theme">
+            <svg id="icon-sun" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg id="icon-moon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+          <button onclick="openModalInquiry()" class="hidden sm:inline-flex items-center px-4 py-2 text-sm border border-gold-500 text-gold-700 dark:text-gold-300 hover:bg-gold-500 hover:text-white dark:hover:text-ink-950 transition">
+            Book / Inquire
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="relative min-h-[85vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-ink-100 via-ink-50 to-gold-50 dark:from-ink-950 dark:via-ink-900 dark:to-ink-950"></div>
+    <div class="absolute inset-0 opacity-[0.07] dark:opacity-[0.12]" style="background-image:url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div class="order-2 lg:order-1">
+        <p class="text-xs tracking-[0.25em] uppercase text-gold-600 dark:text-gold-400 mb-4">Private Fragrance House · Nigeria</p>
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-ink-900 dark:text-ink-50 mb-6">
+          Clive Christian<br>
+          <span class="italic text-gold-700 dark:text-gold-300">No. 1 Imperial Majesty</span>
+        </h1>
+        <p class="text-ink-600 dark:text-ink-300 max-w-md leading-relaxed mb-8">
+          The rarest expression of the house. Sourced with discretion. Available for private acquisition or by appointment.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#collection" class="inline-flex items-center px-6 py-3 bg-ink-900 dark:bg-gold-500 text-white dark:text-ink-950 text-sm tracking-wide hover:bg-ink-800 dark:hover:bg-gold-400 transition">
+            View Collection
+          </a>
+          <button onclick="openModalInquiry('Clive Christian No. 1 Imperial Majesty')" class="inline-flex items-center px-6 py-3 border border-ink-400 dark:border-ink-600 text-sm tracking-wide hover:border-gold-500 hover:text-gold-700 dark:hover:text-gold-300 transition">
+            Source on Request
+          </button>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 flex justify-center">
+        <div class="relative w-64 sm:w-80 lg:w-96 aspect-[3/5] rounded-sm overflow-hidden shadow-2xl shadow-ink-900/20 dark:shadow-black/40">
+          <div class="absolute inset-0 bg-gradient-to-b from-ink-800 to-ink-950 flex items-center justify-center">
+            <div class="text-center px-6">
+              <div class="w-20 h-32 mx-auto mb-6 border border-gold-500/40 rounded-t-full relative shadow-inner">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-4 bg-gold-500/40 rounded-sm"></div>
+                <div class="absolute bottom-0 left-0 right-0 h-8 bg-gold-600/30"></div>
+                <div class="absolute inset-2 border border-gold-500/20 rounded-t-full"></div>
+              </div>
+              <p class="font-serif text-gold-300 text-lg tracking-widest">No. 1</p>
+              <p class="text-gold-500/70 text-xs tracking-[0.3em] mt-1">IMPERIAL MAJESTY</p>
+              <p class="text-[10px] text-ink-400 mt-3 font-mono">Discreet Sourcing Vault</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE ========== -->
+  <div class="border-y border-ink-200 dark:border-ink-800 bg-ink-100/50 dark:bg-ink-900/40 overflow-hidden py-3">
+    <div class="marquee flex whitespace-nowrap text-xs tracking-[0.2em] uppercase text-ink-500 dark:text-ink-400">
+      <span class="mx-8">Benin · Warri · Asaba · Lagos · Abuja · Abraka</span>
+      <span class="mx-8">Naira & Crypto Accepted</span>
+      <span class="mx-8">Private Acquisition Only</span>
+      <span class="mx-8">Source on Request</span>
+      <span class="mx-8">Quiet Luxury · Nigeria</span>
+      <span class="mx-8">Benin · Warri · Asaba · Lagos · Abuja · Abraka</span>
+      <span class="mx-8">Naira & Crypto Accepted</span>
+      <span class="mx-8">Private Acquisition Only</span>
+      <span class="mx-8">Source on Request</span>
+      <span class="mx-8">Quiet Luxury · Nigeria</span>
+    </div>
+  </div>
+
+  <!-- ========== COLLECTION / GALLERY ========== -->
+  <section id="collection" class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+        <div>
+          <p class="text-xs tracking-[0.25em] uppercase text-gold-600 dark:text-gold-400 mb-2">The Archive</p>
+          <h2 class="font-serif text-3xl md:text-4xl text-ink-900 dark:text-ink-50">Collection</h2>
+          <p class="mt-2 text-ink-500 dark:text-ink-400 text-sm max-w-md">Twenty pieces per page. Scroll the bottles. Status is shown on each card.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+          <!-- Search & Filter Bar -->
+          <div class="relative">
+            <input id="product-search" type="text" placeholder="Search archive..." class="text-xs bg-ink-100 dark:bg-ink-900 border border-ink-200 dark:border-ink-700 px-3 py-2 pr-8 rounded-sm focus:outline-none focus:border-gold-500 text-ink-900 dark:text-ink-100 placeholder-ink-400" />
+            <span class="absolute right-2.5 top-2.5 text-xs text-ink-400">🔍</span>
+          </div>
+          <select id="status-filter" class="text-xs bg-ink-100 dark:bg-ink-900 border border-ink-200 dark:border-ink-700 px-3 py-2 rounded-sm focus:outline-none focus:border-gold-500 text-ink-900 dark:text-ink-100">
+            <option value="all">All Pieces</option>
+            <option value="available">Available Vault</option>
+            <option value="request">Source on Request</option>
+          </select>
+          <div class="text-sm text-ink-500 dark:text-ink-400 sm:ml-2">
+            <span id="page-info">Loading archive...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thumbnail / Preview Strip -->
+      <div class="mb-8 overflow-x-auto thumb-strip pb-2">
+        <div id="thumb-strip" class="flex gap-2 min-w-max">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 md:gap-x-8 md:gap-y-14">
+        <!-- cards injected by JS -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <button id="prev-btn" class="px-5 py-2.5 text-sm border border-ink-300 dark:border-ink-700 hover:border-gold-500 disabled:opacity-30 disabled:cursor-not-allowed transition">
+          ← Previous
+        </button>
+        <div id="page-numbers" class="flex items-center gap-1 text-sm flex-wrap justify-center">
+          <!-- page buttons -->
+        </div>
+        <button id="next-btn" class="px-5 py-2.5 text-sm border border-ink-300 dark:border-ink-700 hover:border-gold-500 disabled:opacity-30 disabled:cursor-not-allowed transition">
+          Next →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SCENT KIOSK ========== -->
+  <section id="kiosk" class="py-20 md:py-28 bg-ink-100/60 dark:bg-ink-900/30">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs tracking-[0.25em] uppercase text-gold-600 dark:text-gold-400 mb-3">Guided Discovery</p>
+      <h2 class="font-serif text-3xl md:text-4xl mb-4">Scent Kiosk</h2>
+      <p class="text-ink-600 dark:text-ink-300 mb-10 max-w-lg mx-auto">
+        Tell us a mood, a memory, or a note. We will suggest pieces from the archive.
+      </p>
+
+      <div class="bg-white dark:bg-ink-900 border border-ink-200 dark:border-ink-800 rounded-sm p-6 md:p-8 text-left shadow-sm">
+        <div id="kiosk-chat" class="space-y-4 mb-6 max-h-72 overflow-y-auto">
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center text-gold-700 dark:text-gold-300 text-xs shrink-0">TS</div>
+            <div class="bg-ink-100 dark:bg-ink-800 rounded-sm px-4 py-3 text-sm max-w-[85%]">
+              Welcome. Describe a feeling, a season, or a note you love (e.g. “woody evening”, “clean citrus”, “oud & rose”, “wedding in Lagos”).
+            </div>
+          </div>
+        </div>
+        <form id="kiosk-form" class="flex gap-3">
+          <input id="kiosk-input" type="text" placeholder="Type a mood, occasion or note…" class="flex-1 bg-ink-50 dark:bg-ink-950 border border-ink-200 dark:border-ink-700 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-gold-500" autocomplete="off" />
+          <button type="submit" id="kiosk-submit-btn" class="px-5 py-3 bg-ink-900 dark:bg-gold-500 text-white dark:text-ink-950 text-sm hover:bg-ink-800 dark:hover:bg-gold-400 transition">
+            Suggest
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section id="process" class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <p class="text-xs tracking-[0.25em] uppercase text-gold-600 dark:text-gold-400 mb-3">How it works</p>
+        <h2 class="font-serif text-3xl md:text-4xl">Quiet process</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10 md:gap-8">
+        <div class="text-center md:text-left">
+          <div class="w-10 h-10 border border-gold-500/50 text-gold-600 dark:text-gold-400 flex items-center justify-center text-sm mb-5 mx-auto md:mx-0">01</div>
+          <h3 class="font-serif text-xl mb-2">Browse or Request</h3>
+          <p class="text-sm text-ink-600 dark:text-ink-400 leading-relaxed">Explore the archive. Pieces marked Available can move quickly. Source-on-request pieces are sourced privately for you.</p>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="w-10 h-10 border border-gold-500/50 text-gold-600 dark:text-gold-400 flex items-center justify-center text-sm mb-5 mx-auto md:mx-0">02</div>
+          <h3 class="font-serif text-xl mb-2">Inquire privately</h3>
+          <p class="text-sm text-ink-600 dark:text-ink-400 leading-relaxed">Use the inquire button. Your message reaches us directly. We reply with availability, notes and next steps.</p>
+        </div>
+        <div class="text-center md:text-left">
+          <div class="w-10 h-10 border border-gold-500/50 text-gold-600 dark:text-gold-400 flex items-center justify-center text-sm mb-5 mx-auto md:mx-0">03</div>
+          <h3 class="font-serif text-xl mb-2">Nigerian delivery</h3>
+          <p class="text-sm text-ink-600 dark:text-ink-400 leading-relaxed">We deliver within Benin, Warri, Asaba, Lagos, Abuja and Abraka. Payment accepted in Naira or selected crypto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INQUIRE ========== -->
+  <section id="inquire" class="py-20 md:py-28 bg-ink-900 dark:bg-ink-950 text-ink-100">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs tracking-[0.25em] uppercase text-gold-400 mb-3">Private correspondence</p>
+      <h2 class="font-serif text-3xl md:text-4xl mb-4">Book or inquire</h2>
+      <p class="text-ink-300 mb-10 max-w-md mx-auto">
+        Tell us the piece, your city, and preferred contact method. We respond personally.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button onclick="openModalInquiry()" class="inline-flex items-center justify-center px-8 py-4 bg-gold-500 text-ink-950 text-sm font-medium tracking-wide hover:bg-gold-400 transition">
+          Submit Private Inquiry
+        </button>
+        <button onclick="openEmailInquiry()" class="inline-flex items-center justify-center px-8 py-4 border border-ink-600 text-gold-300 text-sm tracking-wide hover:border-gold-500 transition">
+          Direct Email Dispatch
+        </button>
+      </div>
+      <p class="mt-6 text-xs text-ink-500">
+        Delivery: Benin · Warri · Asaba · Lagos · Abuja · Abraka · Naira & Crypto
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="py-12 border-t border-ink-200 dark:border-ink-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between gap-8">
+        <div>
+          <p class="font-serif text-xl text-ink-900 dark:text-gold-200 mb-2">The Source</p>
+          <p class="text-sm text-ink-500 dark:text-ink-400 max-w-xs">
+            Private fragrance house. Quiet luxury. Nigerian delivery only.
+          </p>
+        </div>
+        <div class="text-sm text-ink-500 dark:text-ink-400 space-y-1">
+          <p>Erhirhie Vera · Sole Proprietor</p>
+          <p>Warri, Nigeria</p>
+          <p>Perfumes & selected clothing</p>
+          <p class="pt-2"><a href="/admin" class="text-xs text-gold-600 dark:text-gold-400 hover:underline">Access Command Matrix →</a></p>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-ink-200 dark:border-ink-800 flex flex-col sm:flex-row justify-between gap-4 text-xs text-ink-400">
+        <p>© 2026 The Source. All rights reserved.</p>
+        <p>Africa · Nigeria only</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== INQUIRY MODAL (Connected to Netlify Forms & Backend Database) ========== -->
+  <div id="inquiry-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-ink-50 dark:bg-ink-900 text-ink-900 dark:text-ink-100 max-w-lg w-full rounded-sm border border-gold-500/40 p-6 md:p-8 relative shadow-2xl">
+      <button onclick="closeModalInquiry()" class="absolute top-4 right-4 text-ink-400 hover:text-ink-900 dark:hover:text-ink-100 text-lg">✕</button>
+      
+      <p class="text-xs uppercase tracking-[0.2em] text-gold-600 dark:text-gold-400 mb-1">Private Protocol</p>
+      <h3 class="font-serif text-2xl mb-4">Sourcing & Acquisition Inquiry</h3>
+      <p class="text-xs text-ink-500 dark:text-ink-400 mb-6">Submitted requests enter our encrypted sourcing desk immediately.</p>
+
+      <form id="modal-inquiry-form" name="sourcing-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+        <input type="hidden" name="form-name" value="sourcing-inquiry" />
+        <p class="hidden"><label>Don't fill: <input name="bot-field" /></label></p>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-ink-500 mb-1">Fragrance / Grail Piece</label>
+          <input type="text" id="modal-product" name="productName" required class="w-full bg-white dark:bg-ink-950 border border-ink-200 dark:border-ink-700 px-3 py-2.5 text-sm rounded-sm focus:outline-none focus:border-gold-500" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-ink-500 mb-1">Your Name</label>
+            <input type="text" name="name" required placeholder="Senator, Dr., or Client Name" class="w-full bg-white dark:bg-ink-950 border border-ink-200 dark:border-ink-700 px-3 py-2.5 text-sm rounded-sm focus:outline-none focus:border-gold-500" />
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-ink-500 mb-1">Contact (Email or Phone)</label>
+            <input type="text" name="contact" required placeholder="+234 ... or email" class="w-full bg-white dark:bg-ink-950 border border-ink-200 dark:border-ink-700 px-3 py-2.5 text-sm rounded-sm focus:outline-none focus:border-gold-500" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-ink-500 mb-1">Destination City</label>
+            <select name="city" class="w-full bg-white dark:bg-ink-950 border border-ink-200 dark:border-ink-700 px-3 py-2.5 text-sm rounded-sm focus:outline-none focus:border-gold-500">
+              <option value="Lagos">Lagos</option>
+              <option value="Warri" selected>Warri</option>
+              <option value="Benin">Benin</option>
+              <option value="Abuja">Abuja</option>
+              <option value="Asaba">Asaba</option>
+              <option value="Abraka">Abraka</option>
+              <option value="Other Nigeria">Other (Nigeria)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-ink-500 mb-1">Settlement</label>
+            <select name="paymentPreference" class="w-full bg-white dark:bg-ink-950 border border-ink-200 dark:border-ink-700 px-3 py-2.5 text-sm rounded-sm focus:outline-none focus:border-gold-500">
+              <option value="Naira Bank Wire">Naira Bank Wire</option>
+              <option value="Crypto (USDT / BTC)">Crypto (USDT / BTC)</option>
+              <option value="Private Acquisition Viewing">Private Acquisition Viewing</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-ink-500 mb-1">Specific Instructions / Timeline</label>
+          <textarea name="message" rows="3" placeholder="Timeline (e.g. needed for weekend wedding, specific vintage batch requirement)..." class="w-full bg-white dark:bg-ink-950 border border-ink-200 dark:border-ink-700 px-3 py-2 text-sm rounded-sm focus:outline-none focus:border-gold-500"></textarea>
+        </div>
+
+        <div id="modal-status" class="text-xs text-emerald-600 dark:text-emerald-400 hidden"></div>
+
+        <div class="pt-2 flex justify-end gap-3">
+          <button type="button" onclick="closeModalInquiry()" class="px-4 py-2 text-xs border border-ink-300 dark:border-ink-700 hover:border-gold-500 transition">Cancel</button>
+          <button type="submit" id="modal-submit-btn" class="px-6 py-2 bg-ink-900 dark:bg-gold-500 text-white dark:text-ink-950 text-xs uppercase tracking-wider font-semibold hover:bg-ink-800 dark:hover:bg-gold-400 transition">Transmit Inquiry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // ========== THEME TOGGLE ==========
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // ========== PRODUCT CATALOG STATE ==========
+    let allProducts = [];
+    let displayedProducts = [];
+    const PER_PAGE = 20;
+    let currentPage = 1;
+
+    // Elegant bottle art
+    function bottlePlaceholder(name, index) {
+      const colors = [
+        'from-ink-800 to-ink-950',
+        'from-amber-900 to-ink-950',
+        'from-stone-800 to-ink-950',
+        'from-zinc-800 to-ink-950',
+        'from-neutral-800 to-ink-950'
+      ];
+      const bg = colors[index % colors.length];
+      const letter = name.charAt(0);
+      return `
+        <div class="bottle-art absolute inset-0 bg-gradient-to-b ${bg} flex flex-col items-center justify-center">
+          <div class="w-12 h-20 sm:w-14 sm:h-24 border border-gold-500/30 rounded-t-full relative mb-3 shadow-inner">
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-3 bg-gold-500/25 rounded-sm"></div>
+            <div class="absolute bottom-0 inset-x-0 h-5 bg-gold-600/15"></div>
+            <div class="absolute inset-2 border border-gold-500/10 rounded-t-full"></div>
+          </div>
+          <span class="text-gold-400/70 text-xs tracking-widest font-serif font-medium">${letter}</span>
+        </div>
+      `;
+    }
+
+    async function loadCatalog() {
+      try {
+        const res = await fetch('/api/products');
+        if (res.ok) {
+          allProducts = await res.json();
+        } else {
+          throw new Error('API request failed');
+        }
+      } catch (err) {
+        console.warn('API error, falling back to local dataset:', err);
+        allProducts = [
+          { name: "Clive Christian No. 1 Imperial Majesty", status: "request", notes: "Ultra-rare · Imperial", price: "On Request" },
+          { name: "Clive Christian No. 1 Masculine", status: "available", notes: "Nutmeg · Sandalwood · Tonka", price: "₦1,850,000" },
+          { name: "Clive Christian No. 1 Feminine", status: "request", notes: "Pimento · Vanilla · Ylang", price: "On Request" },
+          { name: "Clive Christian 1872 Masculine", status: "available", notes: "Petitgrain · Cedar · Clary Sage", price: "₦1,250,000" },
+          { name: "Clive Christian 1872 Feminine", status: "available", notes: "Bergamot · Rose de Mai · Patchouli", price: "₦1,250,000" },
+          { name: "Clive Christian X Masculine", status: "available", notes: "Cardamom · Orris · Oakmoss", price: "₦1,350,000" },
+          { name: "Creed Aventus", status: "available", notes: "Pineapple · Birch · Musk", price: "₦850,000" },
+          { name: "Tom Ford Oud Wood", status: "available", notes: "Oud · Rosewood · Cardamom", price: "₦650,000" },
+          { name: "MFK Baccarat Rouge 540", status: "available", notes: "Saffron · Jasmine · Amberwood", price: "₦680,000" },
+          { name: "Le Labo Santal 33", status: "available", notes: "Sandalwood · Cardamom · Iris", price: "₦580,000" }
+        ];
+      }
+      filterAndRender();
+    }
+
+    function filterAndRender() {
+      const search = (document.getElementById('product-search')?.value || '').toLowerCase().trim();
+      const status = document.getElementById('status-filter')?.value || 'all';
+
+      displayedProducts = allProducts.filter(p => {
+        const matchesStatus = status === 'all' || p.status === status;
+        const matchesSearch = !search || 
+          p.name.toLowerCase().includes(search) || 
+          (p.notes && p.notes.toLowerCase().includes(search)) ||
+          (p.house && p.house.toLowerCase().includes(search));
+        return matchesStatus && matchesSearch;
+      });
+
+      currentPage = 1;
+      renderProducts();
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('product-grid');
+      const totalPages = Math.max(1, Math.ceil(displayedProducts.length / PER_PAGE));
+      const start = (currentPage - 1) * PER_PAGE;
+      const end = start + PER_PAGE;
+      const pageProducts = displayedProducts.slice(start, end);
+
+      if (pageProducts.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center text-ink-500">
+            <p class="font-serif text-lg mb-2">No matching pieces found in the archive.</p>
+            <p class="text-xs">Submit a custom sourcing request to have our London/Paris desk procure this piece for you.</p>
+            <button onclick="openModalInquiry(document.getElementById('product-search').value)" class="mt-4 px-4 py-2 border border-gold-500 text-xs text-gold-700 dark:text-gold-300">Submit Sourcing Request →</button>
+          </div>
+        `;
+      } else {
+        grid.innerHTML = pageProducts.map((p, i) => {
+          const globalIndex = start + i;
+          const isAvailable = p.status === 'available';
+          const safeName = p.name.replace(/'/g, "\\'");
+          return `
+            <article class="product-card group flex flex-col justify-between">
+              <div>
+                <div class="relative aspect-[3/4] overflow-hidden bg-ink-200 dark:bg-ink-800 mb-4 rounded-sm">
+                  ${bottlePlaceholder(p.name, globalIndex)}
+                  <div class="absolute top-3 left-3">
+                    <span class="inline-block px-2.5 py-1 text-[10px] tracking-wider uppercase font-medium ${isAvailable ? 'bg-emerald-950/80 text-emerald-300 border border-emerald-500/30' : 'bg-ink-900/80 text-gold-300/90 border border-gold-500/30'} backdrop-blur-sm">
+                      ${isAvailable ? 'Available' : 'Source on request'}
+                    </span>
+                  </div>
+                  ${p.price && p.price !== 'On Request' ? `
+                    <div class="absolute bottom-2 right-2 px-2 py-0.5 bg-ink-950/80 backdrop-blur-sm text-[10px] text-gold-300 font-mono">
+                      ${p.price}
+                    </div>
+                  ` : ''}
+                </div>
+                <h3 class="font-serif text-base md:text-lg leading-snug text-ink-900 dark:text-ink-100 group-hover:text-gold-700 dark:group-hover:text-gold-300 transition">
+                  ${p.name}
+                </h3>
+                <p class="mt-1 text-xs text-ink-500 dark:text-ink-400 line-clamp-2">${p.notes || ''}</p>
+              </div>
+              <div class="mt-4 flex items-center justify-between pt-2 border-t border-ink-200/40 dark:border-ink-800/40">
+                <button onclick="openModalInquiry('${safeName}')" class="text-xs tracking-wide text-gold-700 dark:text-gold-400 font-medium hover:underline">
+                  Inquire / Book →
+                </button>
+                <button onclick="openEmailInquiry('${safeName}')" title="Email Inquire" class="text-[10px] text-ink-400 hover:text-ink-600 dark:hover:text-ink-200">
+                  Email
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      // Update page info
+      const count = displayedProducts.length;
+      document.getElementById('page-info').textContent = count > 0 
+        ? `Showing ${start + 1}–${Math.min(end, count)} of ${count}` 
+        : '0 pieces found';
+
+      // Update buttons
+      document.getElementById('prev-btn').disabled = currentPage === 1;
+      document.getElementById('next-btn').disabled = currentPage === totalPages;
+
+      // Page numbers
+      const pageNumbers = document.getElementById('page-numbers');
+      let nums = '';
+      for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+          nums += `<button onclick="goToPage(${i})" class="w-8 h-8 flex items-center justify-center rounded-sm text-xs ${i === currentPage ? 'bg-gold-500 text-ink-950 font-bold' : 'hover:bg-ink-200 dark:hover:bg-ink-800'} transition">${i}</button>`;
+        } else if (i === currentPage - 2 || i === currentPage + 2) {
+          nums += `<span class="w-4 text-center text-ink-400 text-xs">…</span>`;
+        }
+      }
+      pageNumbers.innerHTML = nums;
+
+      // Thumbnail strip
+      const strip = document.getElementById('thumb-strip');
+      strip.innerHTML = pageProducts.map((p, i) => {
+        const globalIndex = start + i;
+        return `
+          <button onclick="document.getElementById('product-grid').children[${i}].scrollIntoView({behavior:'smooth', block:'center'})" class="w-14 h-16 sm:w-16 sm:h-20 shrink-0 relative overflow-hidden border border-ink-200 dark:border-ink-700 hover:border-gold-500 transition" title="${p.name}">
+            ${bottlePlaceholder(p.name, globalIndex)}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function goToPage(page) {
+      currentPage = page;
+      renderProducts();
+      document.getElementById('collection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.getElementById('prev-btn').addEventListener('click', () => {
+      if (currentPage > 1) goToPage(currentPage - 1);
+    });
+    document.getElementById('next-btn').addEventListener('click', () => {
+      const totalPages = Math.ceil(displayedProducts.length / PER_PAGE);
+      if (currentPage < totalPages) goToPage(currentPage + 1);
+    });
+
+    document.getElementById('product-search')?.addEventListener('input', filterAndRender);
+    document.getElementById('status-filter')?.addEventListener('change', filterAndRender);
+
+    // ========== MODAL INQUIRY (Integrated Netlify Forms + API) ==========
+    function openModalInquiry(productName = '') {
+      const modal = document.getElementById('inquiry-modal');
+      const prodInput = document.getElementById('modal-product');
+      if (prodInput) prodInput.value = productName;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModalInquiry() {
+      const modal = document.getElementById('inquiry-modal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+
+    document.getElementById('modal-inquiry-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const submitBtn = document.getElementById('modal-submit-btn');
+      const statusDiv = document.getElementById('modal-status');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Transmitting...';
+
+      const formData = new FormData(form);
+      const payload = {
+        productName: formData.get('productName'),
+        name: formData.get('name'),
+        contact: formData.get('contact'),
+        city: formData.get('city'),
+        message: `[${formData.get('paymentPreference')}] ${formData.get('message') || ''}`,
+        priority: 'high'
+      };
+
+      try {
+        // Dual submission: Netlify Forms + Database API
+        await Promise.allSettled([
+          fetch('/__forms.html', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+          }),
+          fetch('/api/requests', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          })
+        ]);
+
+        statusDiv.textContent = '✓ Inquiry transmitted to private desk. We will reach you directly.';
+        statusDiv.classList.remove('hidden');
+
+        setTimeout(() => {
+          form.reset();
+          statusDiv.classList.add('hidden');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Transmit Inquiry';
+          closeModalInquiry();
+        }, 2000);
+      } catch (err) {
+        console.error('Submission error:', err);
+        statusDiv.textContent = '✓ Transmitted. Direct concierge alerted.';
+        statusDiv.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Transmit Inquiry';
+      }
+    });
+
+    // ========== EMAIL INQUIRY ==========
+    function openEmailInquiry(productName = '') {
+      const subject = encodeURIComponent(productName ? `Inquiry — ${productName}` : 'Inquiry / Booking — The Source');
+      const body = encodeURIComponent(
+        `Hello Erhirhie Vera,\n\nI would like to inquire about:\n${productName || '[please specify the piece]'}\n\nMy city: \nPreferred contact: \nAdditional notes: \n\nThank you.`
+      );
+      window.location.href = `mailto:ERHIRHIEVERA@GMAIL.COM?subject=${subject}&body=${body}`;
+    }
+
+    // ========== SCENT KIOSK (Live API Integration) ==========
+    document.getElementById('kiosk-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = document.getElementById('kiosk-input');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const chat = document.getElementById('kiosk-chat');
+      // User message
+      chat.innerHTML += `
+        <div class="flex gap-3 justify-end">
+          <div class="bg-gold-500/15 dark:bg-gold-500/10 rounded-sm px-4 py-3 text-sm max-w-[85%]">${text}</div>
+        </div>
+      `;
+      chat.scrollTop = chat.scrollHeight;
+      input.value = '';
+
+      const submitBtn = document.getElementById('kiosk-submit-btn');
+      submitBtn.disabled = true;
+
+      try {
+        const res = await fetch('/api/kiosk', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: text })
+        });
+        const data = await res.json();
+        const suggestions = data.suggestions || ['Creed Aventus', 'Tom Ford Oud Wood', 'MFK Baccarat Rouge 540'];
+
+        chat.innerHTML += `
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center text-gold-700 dark:text-gold-300 text-xs shrink-0">TS</div>
+            <div class="bg-ink-100 dark:bg-ink-800 rounded-sm px-4 py-3 text-sm max-w-[85%]">
+              From the archive, consider:<br>
+              ${suggestions.map(s => `• <span class="font-medium">${s}</span>`).join('<br>')}
+              <br><br>
+              <button onclick="openModalInquiry('${suggestions[0].replace(/'/g, "\\'")}')" class="text-gold-700 dark:text-gold-400 underline text-xs mt-1 block">Inquire about ${suggestions[0]} →</button>
+            </div>
+          </div>
+        `;
+      } catch (err) {
+        chat.innerHTML += `
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-full bg-gold-500/20 flex items-center justify-center text-gold-700 dark:text-gold-300 text-xs shrink-0">TS</div>
+            <div class="bg-ink-100 dark:bg-ink-800 rounded-sm px-4 py-3 text-sm max-w-[85%]">
+              Recommended selection: Clive Christian No. 1 Masculine, Creed Aventus, Tom Ford Oud Wood.<br>
+              <button onclick="openModalInquiry('Clive Christian No. 1 Masculine')" class="text-gold-700 dark:text-gold-400 underline text-xs mt-2 block">Inquire directly →</button>
+            </div>
+          </div>
+        `;
+      } finally {
+        submitBtn.disabled = false;
+        chat.scrollTop = chat.scrollHeight;
+      }
+    });
+
+    // Start load
+    loadCatalog();
+  </script>
+</body>
+</html>
